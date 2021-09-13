@@ -14,7 +14,7 @@ const HomeScreen = () => {
         <SafeAreaView>
             <View style={[styles.container, tw``]}>
 
-                <Text style={tw`text-white text-xl font-bold mt-4`}>Popular on Netflix</Text>
+                <Text style={tw`text-white text-xl font-bold mt-1 mb-1`}>Popular on Netflix</Text>
     {/*// @ts-ignore*/}
                 <FlatList horizontal={true} showsVerticalScrollIndicator={false}  showsHorizontalScrollIndicator={false} data={firstCategory.movies} renderItem={({item}) => (
                     <View>
