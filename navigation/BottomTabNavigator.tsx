@@ -52,8 +52,6 @@ export default function BottomTabNavigator() {
   );
 }
 
-// Each tab has its own navigation stack, you can read more about this pattern here:
-// https://reactnavigation.org/docs/tab-based-navigation#a-stack-navigator-for-each-tab
 const HomeStack = createStackNavigator<HomeParamList>();
 
 function TabOneNavigator() {
@@ -62,7 +60,7 @@ function TabOneNavigator() {
       <HomeStack.Screen
         name="MovieDetailsScreen"
         component={MovieDetailsScreen}
-        options={{ headerShown: false }}
+        options={{ title: '' }}
       />
 
         <HomeStack.Screen
