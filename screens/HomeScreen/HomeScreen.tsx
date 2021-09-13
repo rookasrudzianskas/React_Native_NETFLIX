@@ -12,8 +12,6 @@ const HomeScreen = () => {
     return (
         <SafeAreaView>
             <View style={[styles.container, tw``]}>
-
-
                 <FlatList showsVerticalScrollIndicator={false}  showsHorizontalScrollIndicator={false}  data={categories.items}  renderItem={({item}) => (
                     // @ts-ignore
                     <HomeCategory  category={item} />
