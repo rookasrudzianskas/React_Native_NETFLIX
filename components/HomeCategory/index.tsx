@@ -6,7 +6,6 @@ import styles from "../../screens/HomeScreen/styles";
 
 const HomeCategory = () => {
     return (
-        <View>
             <View>
                 <Text style={tw`text-white text-xl font-bold mt-1 mb-1`}>Popular on Netflix</Text>
                 {/*// @ts-ignore*/}
@@ -16,7 +15,6 @@ const HomeCategory = () => {
                     </View>
                 )}/>
             </View>
-        </View>
     );
 };
 
