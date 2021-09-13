@@ -10,7 +10,7 @@ const MovieDetailsScreen = () => {
     console.log(firstEpisode)
     return (
         <View style={styles.container}>
-            <Image source={{ uri: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/netflix/ep0.jpg'}} />
+            <Image style={styles.image} source={{ uri: firstEpisode.poster }} />
         </View>
     );
 };
