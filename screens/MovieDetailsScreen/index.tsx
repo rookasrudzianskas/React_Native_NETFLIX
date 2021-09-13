@@ -13,12 +13,12 @@ const MovieDetailsScreen = () => {
     return (
         <View style={styles.container}>
             <Image style={styles.image} source={{ uri: firstEpisode.poster }} />
-
+    <View style={{padding: 12}}>
             <View  style={tw`text-white`}>
-                <Text style={tw`text-white text-3xl mx-2 font-bold mt-3 mb-3`}>{movie.title}</Text>
+                <Text style={tw`text-white text-3xl font-bold mt-3 mb-3`}>{movie.title}</Text>
             </View>
 
-            <View style={tw`flex flex-row mx-2 items-center`}>
+            <View style={tw`flex flex-row items-center`}>
                 <Text style={tw`text-green-500 font-bold`}>98% match</Text>
                 <Text style={tw`text-gray-500 ml-5`}>{movie?.year}</Text>
                 <View style={tw`ml-3 bg-yellow-300 items-center justify-center px-2 py-1 rounded-md`}>
@@ -31,6 +31,7 @@ const MovieDetailsScreen = () => {
                     <MaterialIcons name="hd" size={27} color="gray" />
                 </View>
             </View>
+        </View>
         </View>
     );
 };
