@@ -13,9 +13,11 @@ const HomeScreen = () => {
         <SafeAreaView>
             <View style={[styles.container, tw``]}>
 
-                {/* List of categories*/}
-    {/*// @ts-ignore*/}
-                <HomeCategory category={firstCategory} />
+
+                <FlatList data={categories.items}  renderItem={({item}) => (
+                    // @ts-ignore
+                    <HomeCategory  category={item} />
+                )}/>
 
             </View>
         </SafeAreaView>
