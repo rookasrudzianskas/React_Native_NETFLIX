@@ -1,11 +1,11 @@
 import React from 'react';
-import {View, Text} from "react-native";
+import {View, Text, Image} from "react-native";
 import styles from "./style";
 
 const MovieDetailsScreen = () => {
     return (
         <View style={styles.container}>
-            <Text>New</Text>
+            <Image source={{ uri: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/netflix/ep0.jpg'}} />
         </View>
     );
 };
