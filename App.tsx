@@ -8,6 +8,7 @@ import tw from 'tailwind-react-native-classnames';
 import useCachedResources from './hooks/useCachedResources';
 import useColorScheme from './hooks/useColorScheme';
 import Navigation from './navigation';
+import {SafeAreaView} from "react-native";
 
 export default function App() {
   const isLoadingComplete = useCachedResources();
@@ -18,8 +19,8 @@ export default function App() {
   } else {
     return (
       <SafeAreaProvider>
-        <Navigation colorScheme={colorScheme} />
-        <StatusBar />
+          <Navigation colorScheme={colorScheme} />
+          <StatusBar />
       </SafeAreaProvider>
     );
   }
