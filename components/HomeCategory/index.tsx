@@ -24,6 +24,7 @@ const HomeCategory = (props: HomeCategoryProps) => {
                 {/*// @ts-ignore*/}
                 <FlatList horizontal={true} showsVerticalScrollIndicator={false}  showsHorizontalScrollIndicator={false} data={category.movies} renderItem={({item}) => (
                     <View>
+    {/*// @ts-ignore*/}
                         <Image style={[tw`m-2`, styles.image]} source={{ uri: item.poster }} />
                     </View>
                 )}/>

@@ -4,7 +4,9 @@ import {Text, View, Image, SafeAreaView, FlatList} from 'react-native';
 import styles from "./styles";
 import tw from "tailwind-react-native-classnames";
 import HomeCategory from "../../components/HomeCategory";
+import categories from "../../assets/data/categories";
 
+const firstCategory = categories.items[0];
 
 const HomeScreen = () => {
     return (
@@ -12,6 +14,7 @@ const HomeScreen = () => {
             <View style={[styles.container, tw``]}>
 
                 {/* List of categories*/}
+    {/*// @ts-ignore*/}
                 <HomeCategory category={firstCategory} />
 
             </View>
