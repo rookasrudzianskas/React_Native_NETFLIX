@@ -1,14 +1,25 @@
 import * as React from 'react';
 
-import {Text, View, Image, SafeAreaView} from 'react-native';
+import {Text, View, Image, SafeAreaView, FlatList} from 'react-native';
 import styles from "./styles";
 import tw from "tailwind-react-native-classnames";
+import categories from "../../assets/data/categories";
+
+const firstCategory = categories.items[0];
+
+// console.log(firstCategory.movies);
 
 const HomeScreen = () => {
     return (
         <SafeAreaView>
-            <View style={[styles.container, tw`flex-1`]}>
-                <Image style={[tw``, styles.image]} source={{ uri: "https://cdn.shopify.com/s/files/1/0969/9128/products/MoneyHeist-NetflixTVShowPosterFanArt_f3ca06f4-0ea3-4795-818a-b680979e8073.jpg?v=1589268519" }} />
+            <View style={[styles.container, tw``]}>
+
+    {/*// @ts-ignore*/}
+                <FlatList data={firstCategory.movies} renderItem={(item) => (
+                    <View>
+                        <Image style={[tw``, styles.image]} source={{ uri: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/netflix/movie1.jpg' }} />
+                    </View>
+                )}/>
             </View>
         </SafeAreaView>
     );
