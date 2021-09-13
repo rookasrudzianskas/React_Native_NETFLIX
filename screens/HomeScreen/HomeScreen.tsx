@@ -7,7 +7,7 @@ import categories from "../../assets/data/categories";
 
 const firstCategory = categories.items[0];
 
-// console.log(firstCategory.movies);
+// console.log(firstCategory.movies[0].poster);
 
 const HomeScreen = () => {
     return (
@@ -15,9 +15,9 @@ const HomeScreen = () => {
             <View style={[styles.container, tw``]}>
 
     {/*// @ts-ignore*/}
-                <FlatList data={firstCategory.movies} renderItem={(item) => (
+                <FlatList horizontal={true} showsVerticalScrollIndicator={false}  showsHorizontalScrollIndicator={false} data={firstCategory.movies} renderItem={({item}) => (
                     <View>
-                        <Image style={[tw``, styles.image]} source={{ uri: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/netflix/movie1.jpg' }} />
+                        <Image style={[tw``, styles.image]} source={{ uri: item.poster }} />
                     </View>
                 )}/>
             </View>
