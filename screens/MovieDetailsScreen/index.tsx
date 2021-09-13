@@ -3,7 +3,14 @@ import {View, Text, Image, TouchableOpacity} from "react-native";
 import styles from "./style";
 import movie from "../../assets/data/movie";
 import tw from "tailwind-react-native-classnames";
-import {FontAwesome5, Ionicons, MaterialCommunityIcons, MaterialIcons} from "@expo/vector-icons";
+import {
+    FontAwesome5,
+    Fontisto,
+    Ionicons,
+    MaterialCommunityIcons,
+    MaterialIcons,
+    SimpleLineIcons
+} from "@expo/vector-icons";
 
 const firstEpisode = movie.seasons.items[0].episodes.items[0];
 
@@ -53,6 +60,26 @@ const MovieDetailsScreen = () => {
 
                 <View style={tw``}>
                     <Text style={tw`text-gray-100 mt-1`}>{movie.plot || 'Something'}</Text>
+                    <Text style={tw`text-gray-500 mt-3`}>Cast: {movie?.cast}</Text>
+                    <Text style={tw`text-gray-500 mt-1`}>Creator: {movie?.creator}</Text>
+                </View>
+
+                <View style={tw` flex flex-row mt-4`}>
+                    <View style={tw`flex flex-col items-center ml-4 mr-6`}>
+                        <Fontisto name="plus-a" size={24} color="white" />
+                        <Text style={tw`text-white mt-2`}>My List</Text>
+                    </View>
+
+                    <View style={tw`flex flex-col items-center mx-6`}>
+                        <MaterialIcons name="rate-review" size={24} color="white" />
+                        <Text style={tw`text-white mt-2`}>Rate</Text>
+                    </View>
+
+                    <View style={tw`flex flex-col items-center mx-6`}>
+                        <SimpleLineIcons name="paper-plane" size={24} color="white" />
+                        <Text style={tw`text-white mt-2`}>My List</Text>
+                    </View>
+
                 </View>
             </View>
 
