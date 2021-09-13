@@ -60,10 +60,16 @@ function TabOneNavigator() {
   return (
     <HomeStack.Navigator>
       <HomeStack.Screen
-        name="HomeScreen"
+        name="MovieDetailsScreen"
         component={MovieDetailsScreen}
         options={{ headerShown: false }}
       />
+
+        <HomeStack.Screen
+            name="HomeScreen"
+            component={Index}
+            options={{ headerShown: false }}
+        />
     </HomeStack.Navigator>
   );
 }
