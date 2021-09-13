@@ -16,7 +16,7 @@ const firstEpisode = movie.seasons.items[0].episodes.items[0];
 
 
 const MovieDetailsScreen = () => {
-    console.log(firstEpisode)
+    // console.log(firstEpisode)
     return (
         <View style={styles.container}>
             <Image style={styles.image} source={{ uri: firstEpisode.poster }} />
@@ -66,17 +66,17 @@ const MovieDetailsScreen = () => {
 
                 <View style={tw` flex flex-row mt-4`}>
                     <View style={tw`flex flex-col items-center ml-4 mr-6`}>
-                        <Fontisto name="plus-a" size={24} color="white" />
+                        <Fontisto name="plus-a" size={21} color="white" />
                         <Text style={tw`text-gray-500 mt-2`}>My List</Text>
                     </View>
 
                     <View style={tw`flex flex-col items-center mx-6`}>
-                        <MaterialIcons name="rate-review" size={24} color="white" />
+                        <MaterialIcons name="rate-review" size={21} color="white" />
                         <Text style={tw`text-gray-500 mt-2`}>Rate</Text>
                     </View>
 
                     <View style={tw`flex flex-col items-center mx-6`}>
-                        <SimpleLineIcons name="paper-plane" size={24} color="white" />
+                        <SimpleLineIcons name="paper-plane" size={21} color="white" />
                         <Text style={tw`text-gray-500 mt-2`}>My List</Text>
                     </View>
 
