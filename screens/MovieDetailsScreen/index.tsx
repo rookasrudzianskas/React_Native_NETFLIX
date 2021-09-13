@@ -3,7 +3,7 @@ import {View, Text, Image} from "react-native";
 import styles from "./style";
 import movie from "../../assets/data/movie";
 import tw from "tailwind-react-native-classnames";
-import {MaterialIcons} from "@expo/vector-icons";
+import {MaterialCommunityIcons, MaterialIcons} from "@expo/vector-icons";
 
 const firstEpisode = movie.seasons.items[0].episodes.items[0];
 
@@ -27,8 +27,9 @@ const MovieDetailsScreen = () => {
 
                 <Text style={tw`text-gray-500 ml-3 mr-3`}>{movie?.numberOfSeasons} seasons</Text>
 
-                <View style={tw``}>
+                <View style={tw`flex flex-row items-center`}>
                     <MaterialIcons name="hd" size={27} color="gray" />
+                    <MaterialCommunityIcons name="video-4k-box" size={27} color="gray" />
                 </View>
             </View>
         </View>
