@@ -8,6 +8,9 @@ const styles = StyleSheet.create({
         width: "100%",
         aspectRatio: 16/9,
         resizeMode: 'cover',
+    },
+    icon: {
+        paddingVertical: 10,
     }
 });
 

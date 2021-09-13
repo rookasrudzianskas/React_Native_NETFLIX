@@ -1,9 +1,9 @@
 import React from 'react';
-import {View, Text, Image} from "react-native";
+import {View, Text, Image, TouchableOpacity} from "react-native";
 import styles from "./style";
 import movie from "../../assets/data/movie";
 import tw from "tailwind-react-native-classnames";
-import {MaterialCommunityIcons, MaterialIcons} from "@expo/vector-icons";
+import {FontAwesome5, Ionicons, MaterialCommunityIcons, MaterialIcons} from "@expo/vector-icons";
 
 const firstEpisode = movie.seasons.items[0].episodes.items[0];
 
@@ -32,6 +32,31 @@ const MovieDetailsScreen = () => {
                     <MaterialCommunityIcons name="video-4k-box" size={27} color="gray" />
                 </View>
             </View>
+
+            <View style={tw``}>
+                {/* play button*/}
+                <TouchableOpacity activeOpacity={0.8} onPress={() => console.log("Pressed")}>
+                      <View style={[styles.icon, tw`bg-white flex flex-row items-center justify-center rounded-md mb-3 mt-3`]}>
+                          <FontAwesome5 style={tw`mr-2`}  name="play" size={14} color="black" />
+                          <Text style={tw`font-bold`}>Play</Text>
+                      </View>
+                </TouchableOpacity>
+
+                {/* download button*/}
+                <TouchableOpacity activeOpacity={0.8} onPress={() => console.log("Pressed")}>
+                    <View style={tw`bg-gray-800 flex flex-row items-center justify-center py-2 rounded-md mb-3`}>
+                        <Ionicons style={tw`mr-2`} name="ios-download-outline" size={22} color="white" />
+                        <Text style={tw`text-white font-bold`}>Download</Text>
+                    </View>
+                </TouchableOpacity>
+
+
+                <View style={tw``}>
+                    <Text style={tw`text-gray-100 mt-1`}>{movie.plot || 'Something'}</Text>
+                </View>
+            </View>
+
+
         </View>
         </View>
     );
