@@ -12,7 +12,7 @@ const HomeScreen = () => {
             <View style={[styles.container, tw``]}>
 
                 {/* List of categories*/}
-                <HomeCategory />
+                <HomeCategory category={firstCategory} />
 
             </View>
         </SafeAreaView>
