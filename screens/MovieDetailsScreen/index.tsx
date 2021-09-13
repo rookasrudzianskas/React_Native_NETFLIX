@@ -67,17 +67,17 @@ const MovieDetailsScreen = () => {
                 <View style={tw` flex flex-row mt-4`}>
                     <View style={tw`flex flex-col items-center ml-4 mr-6`}>
                         <Fontisto name="plus-a" size={24} color="white" />
-                        <Text style={tw`text-white mt-2`}>My List</Text>
+                        <Text style={tw`text-gray-500 mt-2`}>My List</Text>
                     </View>
 
                     <View style={tw`flex flex-col items-center mx-6`}>
                         <MaterialIcons name="rate-review" size={24} color="white" />
-                        <Text style={tw`text-white mt-2`}>Rate</Text>
+                        <Text style={tw`text-gray-500 mt-2`}>Rate</Text>
                     </View>
 
                     <View style={tw`flex flex-col items-center mx-6`}>
                         <SimpleLineIcons name="paper-plane" size={24} color="white" />
-                        <Text style={tw`text-white mt-2`}>My List</Text>
+                        <Text style={tw`text-gray-500 mt-2`}>My List</Text>
                     </View>
 
                 </View>
