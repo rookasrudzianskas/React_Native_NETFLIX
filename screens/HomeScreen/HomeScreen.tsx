@@ -14,7 +14,7 @@ const HomeScreen = () => {
             <View style={[styles.container, tw``]}>
 
 
-                <FlatList data={categories.items}  renderItem={({item}) => (
+                <FlatList showsVerticalScrollIndicator={false}  showsHorizontalScrollIndicator={false}  data={categories.items}  renderItem={({item}) => (
                     // @ts-ignore
                     <HomeCategory  category={item} />
                 )}/>
