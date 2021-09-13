@@ -2,8 +2,8 @@ import {StyleSheet} from "react-native";
 
 const styles = StyleSheet.create({
     image: {
-        width: 150,
-        height: 250,
+        width: 120,
+        height: 180,
         resizeMode: "cover",
         borderRadius: 5,
     },

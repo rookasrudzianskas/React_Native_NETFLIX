@@ -14,10 +14,11 @@ const HomeScreen = () => {
         <SafeAreaView>
             <View style={[styles.container, tw``]}>
 
+                <Text style={tw`text-white text-xl font-bold mt-4`}>Popular on Netflix</Text>
     {/*// @ts-ignore*/}
                 <FlatList horizontal={true} showsVerticalScrollIndicator={false}  showsHorizontalScrollIndicator={false} data={firstCategory.movies} renderItem={({item}) => (
                     <View>
-                        <Image style={[tw``, styles.image]} source={{ uri: item.poster }} />
+                        <Image style={[tw`m-2`, styles.image]} source={{ uri: item.poster }} />
                     </View>
                 )}/>
             </View>
