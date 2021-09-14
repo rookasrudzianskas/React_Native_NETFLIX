@@ -59,25 +59,29 @@ const MovieDetailsScreen = () => {
 
     }, []);
 
-    if(!movie) {
-        return <ActivityIndicator />
-    }
 
     console.log(movie);
 
-    // useEffect(() => {
-    //
-    //     if(!movie) {
-    //         return;
-    //     }
-    //
-    //     const fetchSeasons = async () => {
-    //         setSeasons((await DataStore.query(Seasons)).filter(s => s.movieID)
-    //         )
-    //     }
-    //     fetchSeasons();
-    // }, []);
+    useEffect(() => {
 
+        if(!movie) {
+            return;
+        }
+
+        const fetchSeasons = async () => {
+
+            const movieSeasons = (await DataStore.query(Seasons)).filter(s => s.movie?.id === movie.id)
+
+            // @ts-ignore
+            setSeasons(movieSeasons);
+            setCurrentSeason(movieSeasons[0]);
+        }
+        fetchSeasons();
+    }, [movie]);
+
+    if(!movie) {
+        return <ActivityIndicator />
+    }
 
 
     return (
@@ -88,7 +92,7 @@ const MovieDetailsScreen = () => {
             <FlatList
                 showsVerticalScrollIndicator={false}
                 style={{marginBottom: 241,}}
-                data={currentSeason?.episodes?.items || firstSeason}
+                data={episodes || firstSeason}
                 renderItem={({item}) => (
     // @ts-ignore
                         <EpisodeItem episode={item} onPress={(episode) => {
