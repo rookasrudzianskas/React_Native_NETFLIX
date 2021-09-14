@@ -44,7 +44,8 @@ const MovieDetailsScreen = () => {
                 showsVerticalScrollIndicator={false}
                 style={{marginBottom: 260,}}
                 data={currentSeason?.episodes?.items || firstSeason}
-                renderItem={({item}) => <EpisodeItem episode={item} />}
+    // @ts-ignore
+                renderItem={({item}) => <EpisodeItem episode={item} onPress={setCurrentEpisode} />}
                 ListHeaderComponent={(
                     <View style={{padding: 12}}>
                         <View  style={tw`text-white`}>
