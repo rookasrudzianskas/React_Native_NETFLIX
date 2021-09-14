@@ -188,6 +188,7 @@ const MovieDetailsScreen = () => {
                                 {/*    <Text style={tw`text-white font-bold -mb-24`}>Season 1</Text>*/}
                                 {/*</View>*/}
 
+                                {currentSeason ? (
                                 <RNPickerSelect
                                     onValueChange={(itemValue, itemPosition) => {
                                         // setCurrentSeason(movie?.seasons?.items[itemPosition])
@@ -198,6 +199,18 @@ const MovieDetailsScreen = () => {
                                         { label: 'Season 2', value: 'Season 2', color: 'black'  },
                                     ]}
                                     />
+
+                                ) : (
+                                    <RNPickerSelect
+                                        onValueChange={(itemValue, itemPosition) => {
+                                            // setCurrentSeason(movie?.seasons?.items[itemPosition])
+                                        }}
+                                        placeholder={placeholder}
+                                        items={[
+                                            { label: 'Just one season', value: 'One season', color: 'black' },
+                                        ]}
+                                    />
+                                )}
 
                                 <Entypo style={tw`-mt-1 ml-3`} name="chevron-small-down" size={24} color="white" />
                             </View>
