@@ -18,9 +18,10 @@ import EpisodeItem from "../../components/EpisodeItem";
 import {Picker} from "@react-native-picker/picker";
 import VideoPlayer from "../../components/VideoPlayer";
 import set = Reflect.set;
-import {Movie} from "../../src/models";
+import {Movie, Season} from "../../src/models";
 import { DataStore } from 'aws-amplify';
 import {useRoute} from "@react-navigation/native";
+import { Episode } from '../../src/models';
 
 const firstEpisode = movie.seasons.items[0].episodes.items[0];
 const firstSeason = movie.seasons.items[0];
@@ -31,9 +32,13 @@ const MovieDetailsScreen = () => {
     // @ts-ignore
     // const seasonNames = movie.seasons.items.map(season => season.name);
     const seasonNames = [];
-    const [currentSeason, setCurrentSeason] = useState(firstSeason);
-    const [currentEpisode, setCurrentEpisode] = useState(firstSeason.episodes.items[0]);
     const [movie, setMovie] = useState<Movie|undefined>(undefined);
+    const [seasons, setSeasons] = useState<Season[]>([]);
+    const [episodes, setEpisodes] = useState<Episode[]>([]);
+
+
+    const [currentSeason, setCurrentSeason] = useState<Season|undefined>(undefined);
+    const [currentEpisode, setCurrentEpisode] = useState<Episode|undefined>(undefined);
     const placeholder = {
         label: 'Season 1',
         value: null,
