@@ -48,7 +48,7 @@ const MovieDetailsScreen = () => {
                 renderItem={({item}) => (
     // @ts-ignore
                         <EpisodeItem episode={item} onPress={(episode) => {
-                            console.log(episode);
+                            // console.log(episode);
                             setCurrentEpisode(episode);
                      }} />
                     )
