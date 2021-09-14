@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import {Text, View, Image, SafeAreaView, FlatList} from 'react-native';
-import {Datastore} from 'aws-amplify';
+import {DataStore} from 'aws-amplify';
 
 import styles from "./styles";
 import tw from "tailwind-react-native-classnames";
@@ -14,13 +14,13 @@ import {Category} from "../../src/models";
 const firstCategory = categories.items[0];
 
 const HomeScreen = () => {
-    const [categories, setCategories] = useState([]);
+    const [categories, setCategories] = useState<Category[]>([]);
 
 
     useEffect(() => {
         const fetchCategories = async () => {
-            const response = await Datastore.query(Category);
-            console.log(response);
+            setCategories(await DataStore.query(Category));
+            // console.log(response);
         }
 
         fetchCategories();
