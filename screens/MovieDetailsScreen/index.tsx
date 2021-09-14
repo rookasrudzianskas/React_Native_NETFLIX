@@ -11,6 +11,7 @@ import {
     MaterialIcons,
     SimpleLineIcons
 } from "@expo/vector-icons";
+import EpisodeItem from "../../components/EpisodeItem";
 
 const firstEpisode = movie.seasons.items[0].episodes.items[0];
 
@@ -83,6 +84,7 @@ const MovieDetailsScreen = () => {
                 </View>
             </View>
 
+        <EpisodeItem episode={firstEpisode} />
 
         </View>
         </View>
