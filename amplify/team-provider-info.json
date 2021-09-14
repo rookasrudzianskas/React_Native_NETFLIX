@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-reactnativenetflixma-dev-135303-authRole",
+      "UnauthRoleArn": "arn:aws:iam::986698840618:role/amplify-reactnativenetflixma-dev-135303-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::986698840618:role/amplify-reactnativenetflixma-dev-135303-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-reactnativenetflixma-dev-135303-deployment",
+      "UnauthRoleName": "amplify-reactnativenetflixma-dev-135303-unauthRole",
+      "StackName": "amplify-reactnativenetflixma-dev-135303",
+      "StackId": "arn:aws:cloudformation:us-east-1:986698840618:stack/amplify-reactnativenetflixma-dev-135303/f38a0f30-1549-11ec-8a83-0ee0692f5a4b",
+      "AmplifyAppId": "d359ed3nb91he9"
+    }
+  }
+}
