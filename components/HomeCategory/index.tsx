@@ -23,7 +23,7 @@ const HomeCategory = (props: HomeCategoryProps) => {
 
     // @ts-ignore
     const onMoviePress = (movie) => {
-        navigation.navigate('MovieDetailsScreen');
+        navigation.navigate('MovieDetailsScreen', {id: movie.id});
     }
 
     return (
@@ -43,3 +43,5 @@ const HomeCategory = (props: HomeCategoryProps) => {
 };
 
 export default HomeCategory;
+
+// done for today
