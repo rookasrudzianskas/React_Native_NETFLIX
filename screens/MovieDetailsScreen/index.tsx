@@ -63,6 +63,19 @@ const MovieDetailsScreen = () => {
         return <ActivityIndicator />
     }
 
+    useEffect(() => {
+
+        if(!movie) {
+            return;
+        }
+
+        const fetchSeasons = async () => {
+            setSeasons((await DataStore.query(Seasons)).filter(s => s.movieID)
+            )
+        }
+        fetchSeasons();
+    }, []);
+
 
 
     return (
