@@ -17,6 +17,7 @@ import {
 import EpisodeItem from "../../components/EpisodeItem";
 import {Picker} from "@react-native-picker/picker";
 import VideoPlayer from "../../components/VideoPlayer";
+import set = Reflect.set;
 
 const firstEpisode = movie.seasons.items[0].episodes.items[0];
 const firstSeason = movie.seasons.items[0];
@@ -44,8 +45,14 @@ const MovieDetailsScreen = () => {
                 showsVerticalScrollIndicator={false}
                 style={{marginBottom: 260,}}
                 data={currentSeason?.episodes?.items || firstSeason}
+                renderItem={({item}) => (
     // @ts-ignore
-                renderItem={({item}) => <EpisodeItem episode={item} onPress={setCurrentEpisode} />}
+                        <EpisodeItem episode={item} onPress={(episode) => {
+                            console.log(episode);
+                            setCurrentEpisode(episode);
+                     }} />
+                    )
+                }
                 ListHeaderComponent={(
                     <View style={{padding: 12}}>
                         <View  style={tw`text-white`}>
