@@ -3,16 +3,10 @@ import {View, Text, Image} from "react-native";
 import styles from "./style";
 import tw from "tailwind-react-native-classnames";
 import {Ionicons} from "@expo/vector-icons";
+import {Episode} from "../../types";
 
 interface EpisodeItemProps {
-    episode: {
-        id: string,
-        title: string,
-        poster: string,
-        duration: string,
-        plot: string,
-        video: string,
-    }
+    episode: Episode,
 }
 
 const EpisodeItem = (props: EpisodeItemProps) => {
