@@ -37,6 +37,7 @@ const VideoPlayer = (props: VideoPlayerProps) => {
     return (
         <View style={tw``}>
             <Video
+    // @ts-ignore
                 ref={video}
                 style={styles.video}
                 source={{
