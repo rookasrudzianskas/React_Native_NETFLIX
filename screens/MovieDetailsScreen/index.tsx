@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {View, Text, Image, TouchableOpacity, FlatList} from "react-native";
+import {View, Text, Image, TouchableOpacity, FlatList, ActivityIndicator} from "react-native";
 import styles from "./style";
 import movie from "../../assets/data/movie";
 import tw from "tailwind-react-native-classnames";
@@ -20,6 +20,7 @@ import VideoPlayer from "../../components/VideoPlayer";
 import set = Reflect.set;
 import {Movie} from "../../src/models";
 import { DataStore } from 'aws-amplify';
+import {useRoute} from "@react-navigation/native";
 
 const firstEpisode = movie.seasons.items[0].episodes.items[0];
 const firstSeason = movie.seasons.items[0];
@@ -28,23 +29,31 @@ const firstSeason = movie.seasons.items[0];
 const MovieDetailsScreen = () => {
     // console.log(firstEpisode)
     // @ts-ignore
-    const seasonNames = movie.seasons.items.map(season => season.name);
+    // const seasonNames = movie.seasons.items.map(season => season.name);
+    const seasonNames = [];
     const [currentSeason, setCurrentSeason] = useState(firstSeason);
     const [currentEpisode, setCurrentEpisode] = useState(firstSeason.episodes.items[0]);
-    const [movie, setMovie] = useState<Movie|null>(null);
+    const [movie, setMovie] = useState<Movie|undefined>(undefined);
     const placeholder = {
-        label: seasonNames[0],
+        label: 'Season 1',
         value: null,
         color: '#9EA0A4',
     };
 
+    const route = useRoute();
+
     useEffect(() => {
         const fetchMovie = async() => {
-            setMovie(await DataStore.query(Movie, ));
+            // @ts-ignore
+            setMovie(await DataStore.query(Movie, route?.params?.id));
         }
         fetchMovie();
 
     }, []);
+
+    if(!movie) {
+        return <ActivityIndicator />
+    }
 
 
 
