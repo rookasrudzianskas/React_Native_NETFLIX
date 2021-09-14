@@ -43,5 +43,3 @@ const HomeCategory = (props: HomeCategoryProps) => {
 };
 
 export default HomeCategory;
-
-// done for today
