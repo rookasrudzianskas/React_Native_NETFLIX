@@ -1,9 +1,10 @@
-import React, {useRef, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import {View, Text} from "react-native";
 import tw from "tailwind-react-native-classnames";
 import {Episode} from "../../types";
 import {Video} from "expo-av";
 import styles from "./style";
+import {Playback} from "expo-av/build/AV";
 
 interface VideoPlayerProps {
     episode: Episode,
@@ -12,9 +13,25 @@ interface VideoPlayerProps {
 const VideoPlayer = (props: VideoPlayerProps) => {
     const {episode} = props;
 
-    const video = useRef(null);
+    console.log(episode);
+
+    const video = useRef<Playback>(null);
     const [status, setStatus] = useState({});
 
+    useEffect(() => {
+        if(!video) {
+            return;
+        }
+
+        (async () => {
+            await video?.current?.unloadAsync();
+            await video?.current?.loadAsync(
+                { uri: episode.video },
+                {},
+                false
+                );
+        })();
+    }, [episode]);
 
 
     return (
@@ -28,7 +45,10 @@ const VideoPlayer = (props: VideoPlayerProps) => {
                 posterSource={{
                     uri: episode.poster,
                 }}
-                // usePoster={}
+                usePoster={true}
+                posterStyle={{
+                    resizeMode: 'cover'
+                }}
                 useNativeControls
                 resizeMode="contain"
                 onPlaybackStatusUpdate={status => setStatus(() => status)}

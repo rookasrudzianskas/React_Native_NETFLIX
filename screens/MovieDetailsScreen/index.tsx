@@ -43,7 +43,7 @@ const MovieDetailsScreen = () => {
 
             <FlatList
                 showsVerticalScrollIndicator={false}
-                style={{marginBottom: 260,}}
+                style={{marginBottom: 241,}}
                 data={currentSeason?.episodes?.items || firstSeason}
                 renderItem={({item}) => (
     // @ts-ignore
