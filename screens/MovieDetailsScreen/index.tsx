@@ -63,18 +63,20 @@ const MovieDetailsScreen = () => {
         return <ActivityIndicator />
     }
 
-    useEffect(() => {
+    console.log(movie);
 
-        if(!movie) {
-            return;
-        }
-
-        const fetchSeasons = async () => {
-            setSeasons((await DataStore.query(Seasons)).filter(s => s.movieID)
-            )
-        }
-        fetchSeasons();
-    }, []);
+    // useEffect(() => {
+    //
+    //     if(!movie) {
+    //         return;
+    //     }
+    //
+    //     const fetchSeasons = async () => {
+    //         setSeasons((await DataStore.query(Seasons)).filter(s => s.movieID)
+    //         )
+    //     }
+    //     fetchSeasons();
+    // }, []);
 
 
 
@@ -98,7 +100,7 @@ const MovieDetailsScreen = () => {
                 ListHeaderComponent={(
                     <View style={{padding: 12}}>
                         <View  style={tw`text-white`}>
-                            <Text style={tw`text-white text-3xl font-bold mt-3 mb-3`}>{movie.title}</Text>
+                            <Text style={tw`text-white text-3xl font-bold mt-3 mb-3`}>{movie?.title}</Text>
                         </View>
 
                         <View style={tw`flex flex-row items-center`}>
