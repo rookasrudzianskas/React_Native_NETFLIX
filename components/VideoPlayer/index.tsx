@@ -13,6 +13,14 @@ const VideoPlayer = (props: VideoPlayerProps) => {
 
     const handleVideoRef = (component) => {
         const playbackObject = component;
+
+        const source = {
+            uri: episode.video
+        }
+
+        playbackObject.loadAsync(
+            source
+        )
     }
 
     return (
