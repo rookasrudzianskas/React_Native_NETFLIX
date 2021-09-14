@@ -21,6 +21,7 @@ type Movie @model @key(name: "byCategory", fields: ["categoryID"]) {
 
   seasons: [Season] @connection(keyName: "byMovie", fields: ["id"])
 
+
 }
 
 
@@ -29,6 +30,7 @@ type Season @model @key(name: "byMovie", fields: ["movieID"])  {
   name: String!
 
   movieID: ID!
+  movie: Movie @connection(fields: ["movieID"])
 
   episodes: [Episode] @connection(keyName: "bySeason", fields: ["id"])
 }
@@ -42,5 +44,7 @@ type Episode @model @key(name: "bySeason", fields: ["seasonID"]) {
   video: String!
 
   seasonID: ID!
+
+  season: Season @connection(fields: ["seasonID"])
 
 }
