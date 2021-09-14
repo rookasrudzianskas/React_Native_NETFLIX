@@ -1,20 +1,46 @@
-type Blog @model {
-  id: ID!
-  name: String!
-  posts: [Post] @connection(keyName: "byBlog", fields: ["id"])
-}
-
-type Post @model @key(name: "byBlog", fields: ["blogID"]) {
+type Category @model {
   id: ID!
   title: String!
-  blogID: ID!
-  blog: Blog @connection(fields: ["blogID"])
-  comments: [Comment] @connection(keyName: "byPost", fields: ["id"])
+
+  movies: [Movie] @connection(keyName: "byCategory", fields: ["id"])
 }
 
-type Comment @model @key(name: "byPost", fields: ["postID", "content"]) {
+type Movie @model @key(name: "byCategory", fields: ["categoryID"]) {
+
   id: ID!
-  postID: ID!
-  post: Post @connection(fields: ["postID"])
-  content: String!
+  title: String!
+  poster: String!
+  year: Int
+  numberOfSeasons: Int
+
+  plot: String
+  cast: String
+  creator: String
+
+  categoryID: ID!
+
+  seasons: [Season] @connection(keyName: "byMovie", fields: ["id"])
+
+}
+
+
+type Season @model @key(name: "byMovie", fields: ["movieID"])  {
+  id: ID!
+  name: String!
+
+  movieID: ID!
+
+  episodes: [Episode] @connection(keyName: "bySeason", fields: ["id"])
+}
+
+type Episode @model @key(name: "bySeason", fields: ["seasonID"]) {
+  id: ID!
+  title: String!
+  poster: String!
+  duration: String!
+  plot: String
+  video: String!
+
+  seasonID: ID!
+
 }
