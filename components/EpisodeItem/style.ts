@@ -4,6 +4,9 @@ const styles = StyleSheet.create({
     container: {
 
     },
+    image: {
+
+    },
 });
 
 export default styles;

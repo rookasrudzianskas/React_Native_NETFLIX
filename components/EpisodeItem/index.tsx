@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text} from "react-native";
+import {View, Text, Image} from "react-native";
 import styles from "./style";
 import tw from "tailwind-react-native-classnames";
 
@@ -15,9 +15,21 @@ interface EpisodeItemProps {
 }
 
 const EpisodeItem = (props: EpisodeItemProps) => {
+
+    const {episode} = props;
+
     return (
         <View style={styles.container}>
-            <Text style={tw`text-white`}>Rokas</Text>
+            <View style={tw``}>
+                <Image style={styles.image} source={{ uri: episode.poster }} />
+
+                <View style={tw``}>
+                    <Text style={tw``}>{episode.title}</Text>
+                    <Text style={tw``}>{episode.duration}</Text>
+                </View>
+            </View>
+
+            <Text style={tw`text-white`}>{episode.plot}</Text>
         </View>
     );
 };
