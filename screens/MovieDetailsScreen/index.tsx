@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {View, Text, Image, TouchableOpacity, FlatList} from "react-native";
 import styles from "./style";
 import movie from "../../assets/data/movie";
@@ -18,6 +18,8 @@ import EpisodeItem from "../../components/EpisodeItem";
 import {Picker} from "@react-native-picker/picker";
 import VideoPlayer from "../../components/VideoPlayer";
 import set = Reflect.set;
+import {Movie} from "../../src/models";
+import { DataStore } from 'aws-amplify';
 
 const firstEpisode = movie.seasons.items[0].episodes.items[0];
 const firstSeason = movie.seasons.items[0];
@@ -25,14 +27,24 @@ const firstSeason = movie.seasons.items[0];
 
 const MovieDetailsScreen = () => {
     // console.log(firstEpisode)
+    // @ts-ignore
     const seasonNames = movie.seasons.items.map(season => season.name);
     const [currentSeason, setCurrentSeason] = useState(firstSeason);
     const [currentEpisode, setCurrentEpisode] = useState(firstSeason.episodes.items[0]);
+    const [movie, setMovie] = useState<Movie|null>(null);
     const placeholder = {
         label: seasonNames[0],
         value: null,
         color: '#9EA0A4',
     };
+
+    useEffect(() => {
+        const fetchMovie = async() => {
+            setMovie(await DataStore.query(Movie, ));
+        }
+        fetchMovie();
+
+    }, []);
 
 
 
