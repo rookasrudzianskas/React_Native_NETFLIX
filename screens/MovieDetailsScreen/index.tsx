@@ -22,6 +22,7 @@ const MovieDetailsScreen = () => {
     // console.log(firstEpisode)
 
     const seasonNames = movie.seasons.items.map(season => season.name);
+    console.log(seasonNames)
 
     return (
         <View style={styles.container}>
@@ -108,11 +109,10 @@ const MovieDetailsScreen = () => {
                             <View style={[tw``]}>
                                 <Picker
                                     selectedValue={'a'}
-                                    onValueChange={(itemValue, itemIndex) => {
-                                        {seasonNames.map(seasonName => (
-                                            <Picker.Item label={seasonName} value={seasonName} key={seasonName} />
-                                        ))}
-                                    }}>
+                                    onValueChange={(itemValue, itemIndex) => {}}>
+                                    {seasonNames.map(seasonName => (
+                                        <Picker.Item label={seasonName} value={seasonName} key={seasonName} />
+                                    ))}
                                 </Picker>
                             </View>
                         </View>
