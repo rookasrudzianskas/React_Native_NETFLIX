@@ -3,8 +3,6 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import tw from 'tailwind-react-native-classnames';
-import Amplify from 'aws-amplify';
-import config from './aws-exports';
 
 import useCachedResources from './hooks/useCachedResources';
 import useColorScheme from './hooks/useColorScheme';
@@ -13,7 +11,17 @@ import Navigation from './navigation';
 import { withAuthenticator } from 'aws-amplify-react-native';
 import {SafeAreaView} from "react-native";
 
-Amplify.configure(config);
+import Amplify from 'aws-amplify'
+import config from './src/aws-exports'
+
+
+  Amplify.configure({
+    ...config,
+    Analytics: {
+      disabled: true,
+    },
+  });
+
 
 function App (){
   const isLoadingComplete = useCachedResources();
@@ -31,4 +39,4 @@ function App (){
   }
 }
 
-export default withAuthenticator(App);
+export default withAuthenticator(App)
