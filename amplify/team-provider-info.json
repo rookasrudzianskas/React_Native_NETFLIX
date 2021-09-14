@@ -10,6 +10,11 @@
       "StackName": "amplify-reactnativenetflixma-dev-135303",
       "StackId": "arn:aws:cloudformation:us-east-1:986698840618:stack/amplify-reactnativenetflixma-dev-135303/f38a0f30-1549-11ec-8a83-0ee0692f5a4b",
       "AmplifyAppId": "d359ed3nb91he9"
+    },
+    "categories": {
+      "auth": {
+        "reactnativenetflixmac1c48688": {}
+      }
     }
   }
 }
