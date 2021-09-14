@@ -2,6 +2,7 @@ import React from 'react';
 import {View, Text, Image} from "react-native";
 import styles from "./style";
 import tw from "tailwind-react-native-classnames";
+import {Ionicons} from "@expo/vector-icons";
 
 interface EpisodeItemProps {
     episode: {
@@ -27,6 +28,9 @@ const EpisodeItem = (props: EpisodeItemProps) => {
                     <Text style={tw``}>{episode.title}</Text>
                     <Text style={tw``}>{episode.duration}</Text>
                 </View>
+
+                <Ionicons style={tw`mr-2`} name="ios-download-outline" size={22} color="white" />
+
             </View>
 
             <Text style={tw`text-white`}>{episode.plot}</Text>
