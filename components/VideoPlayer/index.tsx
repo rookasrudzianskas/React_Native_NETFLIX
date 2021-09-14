@@ -1,8 +1,9 @@
-import React from 'react';
+import React, {useRef, useState} from 'react';
 import {View, Text} from "react-native";
 import tw from "tailwind-react-native-classnames";
 import {Episode} from "../../types";
 import {Video} from "expo-av";
+import styles from "./style";
 
 interface VideoPlayerProps {
     episode: Episode,
@@ -11,21 +12,23 @@ interface VideoPlayerProps {
 const VideoPlayer = (props: VideoPlayerProps) => {
     const {episode} = props;
 
-    const handleVideoRef = (component) => {
-        const playbackObject = component;
+    const video = useRef(null);
+    const [status, setStatus] = useState({});
 
-        const source = {
-            uri: episode.video
-        }
 
-        playbackObject.loadAsync(
-            source
-        )
-    }
 
     return (
         <View style={tw``}>
-            <Video ref={handleVideoRef} />
+            <Video
+                ref={video}
+                style={styles.video}
+                source={{
+                    uri: episode.video,
+                }}
+                useNativeControls
+                resizeMode="contain"
+                onPlaybackStatusUpdate={status => setStatus(() => status)}
+            />
         </View>
     );
 };
