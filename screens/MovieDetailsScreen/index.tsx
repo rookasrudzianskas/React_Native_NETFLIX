@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {View, Text, Image, TouchableOpacity, FlatList} from "react-native";
 import styles from "./style";
 import movie from "../../assets/data/movie";
@@ -23,6 +23,9 @@ const MovieDetailsScreen = () => {
 
     const seasonNames = movie.seasons.items.map(season => season.name);
     console.log(seasonNames)
+
+    const [selectedValue, setSelectedValue] = useState("java");
+
 
     return (
         <View style={styles.container}>
@@ -108,12 +111,14 @@ const MovieDetailsScreen = () => {
 
                             <View style={[tw``]}>
                                 <Picker
+                                    style={{color: 'white'}}
                                     selectedValue={'a'}
                                     onValueChange={(itemValue, itemIndex) => {}}>
                                     {seasonNames.map(seasonName => (
                                         <Picker.Item label={seasonName} value={seasonName} key={seasonName} />
                                     ))}
                                 </Picker>
+
                             </View>
                         </View>
 
