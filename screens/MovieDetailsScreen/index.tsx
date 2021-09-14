@@ -22,75 +22,79 @@ const MovieDetailsScreen = () => {
     return (
         <View style={styles.container}>
             <Image style={styles.image} source={{ uri: firstEpisode.poster }} />
-    <View style={{padding: 12}}>
-            <View  style={tw`text-white`}>
-                <Text style={tw`text-white text-3xl font-bold mt-3 mb-3`}>{movie.title}</Text>
-            </View>
 
-            <View style={tw`flex flex-row items-center`}>
-                <Text style={tw`text-green-500 font-bold`}>98% match</Text>
-                <Text style={tw`text-gray-500 ml-5`}>{movie?.year}</Text>
-                <View style={tw`ml-3 bg-yellow-300 items-center justify-center px-2 py-1 rounded-md`}>
-                    <Text style={tw`text-gray-900 font-bold`}>12+</Text>
-                </View>
+            <FlatList
+                data={firstSeason.episodes.items}
+                renderItem={({item}) => <EpisodeItem episode={item} />}
+                ListHeaderComponent={(
+                    <View style={{padding: 12}}>
+                        <View  style={tw`text-white`}>
+                            <Text style={tw`text-white text-3xl font-bold mt-3 mb-3`}>{movie.title}</Text>
+                        </View>
 
-                <Text style={tw`text-gray-500 ml-3 mr-3`}>{movie?.numberOfSeasons} seasons</Text>
+                        <View style={tw`flex flex-row items-center`}>
+                            <Text style={tw`text-green-500 font-bold`}>98% match</Text>
+                            <Text style={tw`text-gray-500 ml-5`}>{movie?.year}</Text>
+                            <View style={tw`ml-3 bg-yellow-300 items-center justify-center px-2 py-1 rounded-md`}>
+                                <Text style={tw`text-gray-900 font-bold`}>12+</Text>
+                            </View>
 
-                <View style={tw`flex flex-row items-center`}>
-                    <MaterialIcons name="hd" size={27} color="gray" />
-                    <MaterialCommunityIcons name="video-4k-box" size={27} color="gray" />
-                </View>
-            </View>
+                            <Text style={tw`text-gray-500 ml-3 mr-3`}>{movie?.numberOfSeasons} seasons</Text>
 
-            <View style={tw``}>
-                {/* play button*/}
-                <TouchableOpacity activeOpacity={0.8} onPress={() => console.log("Pressed")}>
-                      <View style={[styles.icon, tw`bg-white flex flex-row items-center justify-center rounded-md mb-3 mt-3`]}>
-                          <FontAwesome5 style={tw`mr-2`}  name="play" size={14} color="black" />
-                          <Text style={tw`font-bold`}>Play</Text>
-                      </View>
-                </TouchableOpacity>
+                            <View style={tw`flex flex-row items-center`}>
+                                <MaterialIcons name="hd" size={27} color="gray" />
+                                <MaterialCommunityIcons name="video-4k-box" size={27} color="gray" />
+                            </View>
+                        </View>
 
-                {/* download button*/}
-                <TouchableOpacity activeOpacity={0.8} onPress={() => console.log("Pressed")}>
-                    <View style={tw`bg-gray-800 flex flex-row items-center justify-center py-2 rounded-md mb-3`}>
-                        <Ionicons style={tw`mr-2`} name="ios-download-outline" size={22} color="white" />
-                        <Text style={tw`text-white font-bold`}>Download</Text>
+                        <View style={tw``}>
+                            {/* play button*/}
+                            <TouchableOpacity activeOpacity={0.8} onPress={() => console.log("Pressed")}>
+                                <View style={[styles.icon, tw`bg-white flex flex-row items-center justify-center rounded-md mb-3 mt-3`]}>
+                                    <FontAwesome5 style={tw`mr-2`}  name="play" size={14} color="black" />
+                                    <Text style={tw`font-bold`}>Play</Text>
+                                </View>
+                            </TouchableOpacity>
+
+                            {/* download button*/}
+                            <TouchableOpacity activeOpacity={0.8} onPress={() => console.log("Pressed")}>
+                                <View style={tw`bg-gray-800 flex flex-row items-center justify-center py-2 rounded-md mb-3`}>
+                                    <Ionicons style={tw`mr-2`} name="ios-download-outline" size={22} color="white" />
+                                    <Text style={tw`text-white font-bold`}>Download</Text>
+                                </View>
+                            </TouchableOpacity>
+
+
+                            <View style={tw``}>
+                                <Text style={tw`text-gray-100 mt-1`}>{movie.plot || 'Something'}</Text>
+                                <Text style={tw`text-gray-500 mt-3`}>Cast: {movie?.cast}</Text>
+                                <Text style={tw`text-gray-500 mt-1`}>Creator: {movie?.creator}</Text>
+                            </View>
+
+                            <View style={tw` flex flex-row mt-4`}>
+                                <View style={tw`flex flex-col items-center ml-4 mr-6`}>
+                                    <Fontisto name="plus-a" size={21} color="white" />
+                                    <Text style={tw`text-gray-500 mt-2`}>My List</Text>
+                                </View>
+
+                                <View style={tw`flex flex-col items-center mx-6`}>
+                                    <MaterialIcons name="rate-review" size={21} color="white" />
+                                    <Text style={tw`text-gray-500 mt-2`}>Rate</Text>
+                                </View>
+
+                                <View style={tw`flex flex-col items-center mx-6`}>
+                                    <SimpleLineIcons name="paper-plane" size={21} color="white" />
+                                    <Text style={tw`text-gray-500 mt-2`}>My List</Text>
+                                </View>
+
+                            </View>
+                        </View>
+
                     </View>
-                </TouchableOpacity>
+                )}
+            />
+        {/*<EpisodeItem episode={firstEpisode} />*/}
 
-
-                <View style={tw``}>
-                    <Text style={tw`text-gray-100 mt-1`}>{movie.plot || 'Something'}</Text>
-                    <Text style={tw`text-gray-500 mt-3`}>Cast: {movie?.cast}</Text>
-                    <Text style={tw`text-gray-500 mt-1`}>Creator: {movie?.creator}</Text>
-                </View>
-
-                <View style={tw` flex flex-row mt-4`}>
-                    <View style={tw`flex flex-col items-center ml-4 mr-6`}>
-                        <Fontisto name="plus-a" size={21} color="white" />
-                        <Text style={tw`text-gray-500 mt-2`}>My List</Text>
-                    </View>
-
-                    <View style={tw`flex flex-col items-center mx-6`}>
-                        <MaterialIcons name="rate-review" size={21} color="white" />
-                        <Text style={tw`text-gray-500 mt-2`}>Rate</Text>
-                    </View>
-
-                    <View style={tw`flex flex-col items-center mx-6`}>
-                        <SimpleLineIcons name="paper-plane" size={21} color="white" />
-                        <Text style={tw`text-gray-500 mt-2`}>My List</Text>
-                    </View>
-
-                </View>
-            </View>
-
-        <FlatList
-            data={movie.seasons}
-        />
-        <EpisodeItem episode={firstEpisode} />
-
-        </View>
         </View>
     );
 };
