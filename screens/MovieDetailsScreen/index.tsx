@@ -6,6 +6,7 @@ import tw from "tailwind-react-native-classnames";
 import RNPickerSelect from 'react-native-picker-select';
 
 import {
+    Entypo,
     FontAwesome5,
     Fontisto,
     Ionicons,
@@ -117,7 +118,7 @@ const MovieDetailsScreen = () => {
                                 </Text>
                             </View>
 
-                            <View style={[tw`mt-2 -mb-7`]}>
+                            <View style={[tw`mt-2 -mb-7 flex flex-row items-center`]}>
                                 {/*<Picker*/}
                                 {/*    style={{color: 'white', height: 50, marginTop: -50, marginBottom: 40, padding: -10, width: 150}}*/}
                                 {/*    selectedValue={'a'}*/}
@@ -141,6 +142,8 @@ const MovieDetailsScreen = () => {
                                         { label: 'Season 2', value: 'Season 2', color: 'black'  },
                                     ]}
                                     />
+
+                                <Entypo style={tw`-mt-1 ml-3`} name="chevron-small-down" size={24} color="white" />
                             </View>
                         </View>
 
