@@ -9,6 +9,7 @@ import config from './aws-exports'
 import useCachedResources from './hooks/useCachedResources';
 import useColorScheme from './hooks/useColorScheme';
 import Navigation from './navigation';
+// @ts-ignore
 import { withAuthenticator } from 'aws-amplify-react-native';
 import {SafeAreaView} from "react-native";
 
