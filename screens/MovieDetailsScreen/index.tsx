@@ -35,7 +35,6 @@ const MovieDetailsScreen = () => {
         color: '#9EA0A4',
     };
 
-
     return (
         <View style={styles.container}>
             <Image style={styles.image} source={{ uri: firstEpisode.poster }} />
@@ -43,7 +42,7 @@ const MovieDetailsScreen = () => {
             <FlatList
                 showsVerticalScrollIndicator={false}
                 style={{marginBottom: 260,}}
-                data={firstSeason.episodes.items}
+                data={currentSeason.episodes.items}
                 renderItem={({item}) => <EpisodeItem episode={item} />}
                 ListHeaderComponent={(
                     <View style={{padding: 12}}>
@@ -133,7 +132,9 @@ const MovieDetailsScreen = () => {
                                 {/*</View>*/}
 
                                 <RNPickerSelect
-                                    onValueChange={() => console.log('a')}
+                                    onValueChange={(itemValue, itemPosition) => {
+                                        setCurrentSeason(movie.seasons.items[itemPosition])
+                                    }}
                                     placeholder={placeholder}
                                     items={[
                                         { label: 'Season 1', value: 'Season 1', color: 'black' },
@@ -146,7 +147,6 @@ const MovieDetailsScreen = () => {
                     </View>
                 )}
             />
-        {/*<EpisodeItem episode={firstEpisode} />*/}
 
         </View>
     );
