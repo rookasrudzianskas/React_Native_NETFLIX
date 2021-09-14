@@ -33,6 +33,7 @@ const MovieDetailsScreen = () => {
     // const seasonNames = movie.seasons.items.map(season => season.name);
     const [movie, setMovie] = useState<Movie|undefined>(undefined);
     const [seasons, setSeasons] = useState<Season[]>([]);
+    console.log("This is the normal seasons")
     const [episodes, setEpisodes] = useState<Episode[]>([]);
 
 
@@ -63,15 +64,11 @@ const MovieDetailsScreen = () => {
     console.log(movie);
 
     useEffect(() => {
-
         if(!movie) {
             return;
         }
-
         const fetchSeasons = async () => {
-
             const movieSeasons = (await DataStore.query(Seasons)).filter(s => s.movie?.id === movie.id)
-
             // @ts-ignore
             setSeasons(movieSeasons);
             setCurrentSeason(movieSeasons[0]);
@@ -82,6 +79,8 @@ const MovieDetailsScreen = () => {
     if(!movie) {
         return <ActivityIndicator />
     }
+
+    console.log("This is seasons >>>>", seasons);
 
 
     return (
