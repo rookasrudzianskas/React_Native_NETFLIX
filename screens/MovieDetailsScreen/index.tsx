@@ -24,6 +24,8 @@ const MovieDetailsScreen = () => {
             <Image style={styles.image} source={{ uri: firstEpisode.poster }} />
 
             <FlatList
+                showsVerticalScrollIndicator={false}
+                style={{marginBottom: 240,}}
                 data={firstSeason.episodes.items}
                 renderItem={({item}) => <EpisodeItem episode={item} />}
                 ListHeaderComponent={(
