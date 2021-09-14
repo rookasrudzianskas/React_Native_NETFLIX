@@ -12,6 +12,7 @@ import {
     SimpleLineIcons
 } from "@expo/vector-icons";
 import EpisodeItem from "../../components/EpisodeItem";
+import {Picker} from "@react-native-picker/picker";
 
 const firstEpisode = movie.seasons.items[0].episodes.items[0];
 const firstSeason = movie.seasons.items[0];
@@ -19,6 +20,9 @@ const firstSeason = movie.seasons.items[0];
 
 const MovieDetailsScreen = () => {
     // console.log(firstEpisode)
+
+    const seasonNames = movie.seasons.items.map(season => season.name);
+
     return (
         <View style={styles.container}>
             <Image style={styles.image} source={{ uri: firstEpisode.poster }} />
@@ -99,6 +103,17 @@ const MovieDetailsScreen = () => {
                                 <Text style={tw`text-gray-500 font-bold mt-4 ml-4`}>
                                     MORE LIKE THIS
                                 </Text>
+                            </View>
+
+                            <View style={[tw``]}>
+                                <Picker
+                                    selectedValue={'a'}
+                                    onValueChange={(itemValue, itemIndex) => {
+                                        {seasonNames.map(seasonName => (
+                                            <Picker.Item label={seasonName} value={seasonName} key={seasonName} />
+                                        ))}
+                                    }}>
+                                </Picker>
                             </View>
                         </View>
 
