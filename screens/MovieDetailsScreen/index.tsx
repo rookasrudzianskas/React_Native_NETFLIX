@@ -42,7 +42,7 @@ const MovieDetailsScreen = () => {
             <FlatList
                 showsVerticalScrollIndicator={false}
                 style={{marginBottom: 260,}}
-                data={currentSeason.episodes.items}
+                data={currentSeason?.episodes?.items || firstSeason}
                 renderItem={({item}) => <EpisodeItem episode={item} />}
                 ListHeaderComponent={(
                     <View style={{padding: 12}}>
@@ -133,7 +133,7 @@ const MovieDetailsScreen = () => {
 
                                 <RNPickerSelect
                                     onValueChange={(itemValue, itemPosition) => {
-                                        setCurrentSeason(movie.seasons.items[itemPosition])
+                                        // setCurrentSeason(movie?.seasons?.items[itemPosition])
                                     }}
                                     placeholder={placeholder}
                                     items={[
