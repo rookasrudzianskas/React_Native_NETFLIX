@@ -23,18 +23,15 @@ const firstSeason = movie.seasons.items[0];
 
 const MovieDetailsScreen = () => {
     // console.log(firstEpisode)
-
     const seasonNames = movie.seasons.items.map(season => season.name);
-    console.log(seasonNames)
-
-
     const [currentSeason, setCurrentSeason] = useState(firstSeason);
-
     const placeholder = {
         label: seasonNames[0],
         value: null,
         color: '#9EA0A4',
     };
+
+
 
     return (
         <View style={styles.container}>
