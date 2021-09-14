@@ -119,8 +119,8 @@ const MovieDetailsScreen = () => {
                                 {/*    ))}*/}
                                 {/*</Picker>*/}
 
-                                <View style={tw`mt-7 font-bold`}>
-                                    <Text style={tw`text-white font-bold -mb-16`}>Season 1</Text>
+                                <View style={tw`mt-3 font-bold`}>
+                                    <Text style={tw`text-white font-bold -mb-24`}>Season 1</Text>
                                 </View>
 
                             </View>
