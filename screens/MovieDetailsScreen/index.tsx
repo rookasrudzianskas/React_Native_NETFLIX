@@ -25,7 +25,7 @@ const MovieDetailsScreen = () => {
 
             <FlatList
                 showsVerticalScrollIndicator={false}
-                style={{marginBottom: 240,}}
+                style={{marginBottom: 260,}}
                 data={firstSeason.episodes.items}
                 renderItem={({item}) => <EpisodeItem episode={item} />}
                 ListHeaderComponent={(
