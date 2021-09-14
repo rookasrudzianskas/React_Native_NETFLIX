@@ -2,6 +2,7 @@ import React from 'react';
 import {FlatList, Image, Text, TouchableOpacity, View} from "react-native";
 import tw from "tailwind-react-native-classnames";
 import styles from "../../screens/HomeScreen/styles";
+import {useNavigation} from "@react-navigation/native";
 
 interface HomeCategoryProps {
     category: {
@@ -18,8 +19,11 @@ const HomeCategory = (props: HomeCategoryProps) => {
 
     const {category} = props;
 
+    const navigation = useNavigation();
+
+    // @ts-ignore
     const onMoviePress = (movie) => {
-        console.log(movie.title);
+        navigation.navigate('MovieDetailsScreen');
     }
 
     return (
