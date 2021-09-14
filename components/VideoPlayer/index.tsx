@@ -13,7 +13,7 @@ interface VideoPlayerProps {
 const VideoPlayer = (props: VideoPlayerProps) => {
     const {episode} = props;
 
-    console.log(episode);
+    // console.log(episode);
 
     const video = useRef<Playback>(null);
     const [status, setStatus] = useState({});
