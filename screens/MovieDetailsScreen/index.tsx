@@ -3,6 +3,8 @@ import {View, Text, Image, TouchableOpacity, FlatList} from "react-native";
 import styles from "./style";
 import movie from "../../assets/data/movie";
 import tw from "tailwind-react-native-classnames";
+import RNPickerSelect from 'react-native-picker-select';
+
 import {
     FontAwesome5,
     Fontisto,
@@ -24,7 +26,14 @@ const MovieDetailsScreen = () => {
     const seasonNames = movie.seasons.items.map(season => season.name);
     console.log(seasonNames)
 
-    const [selectedValue, setSelectedValue] = useState("java");
+
+    const [currentSeason, setCurrentSeason] = useState(firstSeason);
+
+    const placeholder = {
+        label: seasonNames[0],
+        value: null,
+        color: '#9EA0A4',
+    };
 
 
     return (
@@ -109,7 +118,7 @@ const MovieDetailsScreen = () => {
                                 </Text>
                             </View>
 
-                            <View style={[tw``]}>
+                            <View style={[tw`mt-2 -mb-7`]}>
                                 {/*<Picker*/}
                                 {/*    style={{color: 'white', height: 50, marginTop: -50, marginBottom: 40, padding: -10, width: 150}}*/}
                                 {/*    selectedValue={'a'}*/}
@@ -119,10 +128,18 @@ const MovieDetailsScreen = () => {
                                 {/*    ))}*/}
                                 {/*</Picker>*/}
 
-                                <View style={tw`mt-3 font-bold`}>
-                                    <Text style={tw`text-white font-bold -mb-24`}>Season 1</Text>
-                                </View>
+                                {/*<View style={tw`mt-3 font-bold`}>*/}
+                                {/*    <Text style={tw`text-white font-bold -mb-24`}>Season 1</Text>*/}
+                                {/*</View>*/}
 
+                                <RNPickerSelect
+                                    onValueChange={() => console.log('a')}
+                                    placeholder={placeholder}
+                                    items={[
+                                        { label: 'Season 1', value: 'Season 1', color: 'black' },
+                                        { label: 'Season 2', value: 'Season 2', color: 'black'  },
+                                    ]}
+                                    />
                             </View>
                         </View>
 
