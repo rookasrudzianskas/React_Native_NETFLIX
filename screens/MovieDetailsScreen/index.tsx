@@ -110,14 +110,18 @@ const MovieDetailsScreen = () => {
                             </View>
 
                             <View style={[tw``]}>
-                                <Picker
-                                    style={{color: 'white'}}
-                                    selectedValue={'a'}
-                                    onValueChange={(itemValue, itemIndex) => {}}>
-                                    {seasonNames.map(seasonName => (
-                                        <Picker.Item label={seasonName} value={seasonName} key={seasonName} />
-                                    ))}
-                                </Picker>
+                                {/*<Picker*/}
+                                {/*    style={{color: 'white', height: 50, marginTop: -50, marginBottom: 40, padding: -10, width: 150}}*/}
+                                {/*    selectedValue={'a'}*/}
+                                {/*    onValueChange={(itemValue, itemIndex) => {}}>*/}
+                                {/*    {seasonNames.map(seasonName => (*/}
+                                {/*        <Picker.Item label={seasonName} value={seasonName} key={seasonName} />*/}
+                                {/*    ))}*/}
+                                {/*</Picker>*/}
+
+                                <View style={tw`mt-7 font-bold`}>
+                                    <Text style={tw`text-white font-bold -mb-16`}>Season 1</Text>
+                                </View>
 
                             </View>
                         </View>
