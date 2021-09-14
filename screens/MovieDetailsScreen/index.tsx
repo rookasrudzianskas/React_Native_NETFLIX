@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, Image, TouchableOpacity} from "react-native";
+import {View, Text, Image, TouchableOpacity, FlatList} from "react-native";
 import styles from "./style";
 import movie from "../../assets/data/movie";
 import tw from "tailwind-react-native-classnames";
@@ -14,6 +14,7 @@ import {
 import EpisodeItem from "../../components/EpisodeItem";
 
 const firstEpisode = movie.seasons.items[0].episodes.items[0];
+const firstSeason = movie.seasons.items[0];
 
 
 const MovieDetailsScreen = () => {
@@ -84,6 +85,9 @@ const MovieDetailsScreen = () => {
                 </View>
             </View>
 
+        <FlatList
+            data={movie.seasons}
+        />
         <EpisodeItem episode={firstEpisode} />
 
         </View>
