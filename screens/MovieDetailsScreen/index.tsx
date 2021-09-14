@@ -90,6 +90,16 @@ const MovieDetailsScreen = () => {
                                 </View>
 
                             </View>
+
+                            <View style={tw`flex flex-row`}>
+                                <Text style={tw`text-white font-bold mt-4`}>
+                                    EPISODES
+                                </Text>
+
+                                <Text style={tw`text-gray-500 font-bold mt-4 ml-4`}>
+                                    MORE LIKE THIS
+                                </Text>
+                            </View>
                         </View>
 
                     </View>
