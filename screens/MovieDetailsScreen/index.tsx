@@ -67,8 +67,8 @@ const MovieDetailsScreen = () => {
             const movieSeasons = (await DataStore.query(Seasons)).filter(s => s.movie?.id === movie.id)
             // @ts-ignore
             console.log("this is that movie seasons 🔥", movieSeasons);
-            // setSeasons(movieSeasons);
-            // setCurrentSeason(movieSeasons[0]);
+            setSeasons(movieSeasons);
+            setCurrentSeason(movieSeasons[0]);
         }
         fetchSeasons();
     }, [movie]);
@@ -80,7 +80,7 @@ const MovieDetailsScreen = () => {
 
 
 
-    console.log("This is seasons >>>>", seasons);
+    // console.log("This is seasons >>>>", seasons);
 
 
     return (
