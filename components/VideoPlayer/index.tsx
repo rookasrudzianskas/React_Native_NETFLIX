@@ -43,6 +43,12 @@ const VideoPlayer = (props: VideoPlayerProps) => {
         Storage.get(episode.video).then(setVideoURL);
     }, []);
 
+    console.log(videoURL);
+
+    if(!videoURL) {
+        return null;
+    }
+
 
     return (
         <View style={tw``}>

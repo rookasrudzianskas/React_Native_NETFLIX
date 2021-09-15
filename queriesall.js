@@ -74,3 +74,42 @@
 //     }
 // }
 //
+// query moviesand {
+//     listMovies {
+//         items {
+//             id
+//             poster
+//             title
+//             categoryID
+//         }
+//     }
+// }
+//
+// query listalltheseasons {
+//     listSeasons {
+//         items {
+//             id
+//             name
+//         }
+//     }
+// }
+//
+// mutation MyMutation5 {
+//     updateMovie(input: {id: "f803697c-d432-4b5f-af8e-13b59e847772", poster: "asia-culturecenter-YgFUJ4Ef2EY-unsplash.jpg"}) {
+//         id
+//         poster
+//     }
+// }
+//
+// mutation MyMutation6 {
+//     createMovie(input: {poster: "asia-culturecenter-YgFUJ4Ef2EY-unsplash.jpg", categoryID: "7a214355-73eb-479b-983f-95c94584913a", title: "New film about something very cool", year: 2021}) {
+//         id
+//     }
+// }
+//
+// mutation MyMutation7 {
+//     createEpisode(input: {seasonID: "171c245a-7ac1-430d-a2ae-d936f385fabb", video: "movies/hd0079.mov", title: "Hello again episode, which is very nice one!", poster: "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/netflix/movie1.jpg", plot: "It is whole new episode, just about everything.", duration: "2h 20m"}) {
+//         id
+//     }
+// }
+//
