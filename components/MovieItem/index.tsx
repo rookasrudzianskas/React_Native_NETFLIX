@@ -1,11 +1,11 @@
 import React from 'react';
 import {View, Text, TouchableOpacity, Image} from "react-native";
 import tw from "tailwind-react-native-classnames";
-import styles from "../../screens/HomeScreen/styles";
+import styles from "./style";
 import {Movie} from "../../src/models";
 import {useNavigation} from "@react-navigation/native";
 
-const MovieItem = ({item}) => {
+const MovieItem = ({ movie } : {movie: Movie}) => {
     const navigation = useNavigation();
 
     // @ts-ignore
@@ -15,9 +15,9 @@ const MovieItem = ({item}) => {
 
     return (
         <View>
-            <TouchableOpacity activeOpacity={0.8} onPress={() => onMoviePress(item)}>
+            <TouchableOpacity activeOpacity={0.8} onPress={() => onMoviePress}>
                 {/*// @ts-ignore*/}
-                <Image style={[tw`m-2`, styles.image]} source={{ uri: item.poster }} />
+                <Image style={[tw`m-2`, styles.image]} source={{ uri: movie.poster }} />
             </TouchableOpacity>
         </View>
     );
