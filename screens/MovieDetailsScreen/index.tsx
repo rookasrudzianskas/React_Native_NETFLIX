@@ -59,19 +59,19 @@ const MovieDetailsScreen = () => {
 
     console.log(movie);
 
-    // useEffect(() => {
-    //     if(!movie) {
-    //         return;
-    //     }
-    //     const fetchSeasons = async () => {
-    //         const movieSeasons = (await DataStore.query(Seasons)).filter(s => s.movie?.id === movie.id)
-    //         // @ts-ignore
-    //         console.log("this is that movie seasons 🔥", movieSeasons);
-    //         // setSeasons(movieSeasons);
-    //         // setCurrentSeason(movieSeasons[0]);
-    //     }
-    //     fetchSeasons();
-    // }, [movie]);
+    useEffect(() => {
+        if(!movie) {
+            return;
+        }
+        const fetchSeasons = async () => {
+            const movieSeasons = (await DataStore.query(Seasons)).filter(s => s.movie?.id === movie.id)
+            // @ts-ignore
+            console.log("this is that movie seasons 🔥", movieSeasons);
+            // setSeasons(movieSeasons);
+            // setCurrentSeason(movieSeasons[0]);
+        }
+        fetchSeasons();
+    }, [movie]);
 
     if(!movie) {
         return <ActivityIndicator />
