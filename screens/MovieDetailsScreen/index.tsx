@@ -73,9 +73,6 @@ const MovieDetailsScreen = () => {
         return <ActivityIndicator />
     }
 
-
-
-
     console.log("This is seasons >>>>", seasons);
 
 
