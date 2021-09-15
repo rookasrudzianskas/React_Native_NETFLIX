@@ -38,7 +38,6 @@ const MovieDetailsScreen = () => {
     // gets seasons array
     const seasonNames = seasons ? seasons.map(season => season.name) : [];
 
-
     const placeholder = {
         label: 'Season 1',
         value: null,
@@ -46,6 +45,8 @@ const MovieDetailsScreen = () => {
     };
 
     const route = useRoute();
+
+    // ----------------------------------------- functions -----------------------------------------------------------------
 
     useEffect(() => {
         const fetchMovie = async() => {
