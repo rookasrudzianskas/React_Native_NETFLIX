@@ -67,7 +67,7 @@ const MovieDetailsScreen = () => {
             const movieSeasons = (await DataStore.query(Season)).filter(s => s.movie?.id == movie.id);
             setSeasons(movieSeasons);
             setCurrentSeason(movieSeasons[0]);
-        }s
+        }
         fetchSeasons();
     }, [movie])
 
