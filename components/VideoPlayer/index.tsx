@@ -43,7 +43,7 @@ const VideoPlayer = (props: VideoPlayerProps) => {
         Storage.get(episode.video).then(setVideoURL);
     }, []);
 
-    console.log(videoURL);
+    // console.log(videoURL);
 
     if(!videoURL) {
         return null;
