@@ -45,7 +45,7 @@ const VideoPlayer = (props: VideoPlayerProps) => {
 
     // console.log(videoURL);
 
-    if(!videoURL) {
+    if(videoURL === '') {
         return null;
     }
 
