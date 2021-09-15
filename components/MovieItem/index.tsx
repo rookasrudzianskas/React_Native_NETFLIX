@@ -17,14 +17,14 @@ const MovieItem = ({ movie } : {movie: Movie}) => {
 
     useEffect(() => {
         // storage
-        Storage.list('asia-culturecenter-YgFUJ4Ef2EY-unsplash.jpg').then(setImageUrl);
+        Storage.get('asia-culturecenter-YgFUJ4Ef2EY-unsplash.jpg').then(setImageUrl);
     }, []);
 
     return (
         <View>
             <TouchableOpacity activeOpacity={0.8} onPress={() => onMoviePress}>
                 {/*// @ts-ignore*/}
-                <Image style={[tw`m-2`, styles.image]} source={{ uri: movie?.poster }} />
+                <Image style={[tw`m-2`, styles.image]} source={{ uri: imageUrl || movie?.poster }} />
             </TouchableOpacity>
         </View>
     );
