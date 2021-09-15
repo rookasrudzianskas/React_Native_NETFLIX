@@ -32,10 +32,10 @@ const MovieDetailsScreen = () => {
     const [seasons, setSeasons] = useState<Season[]>([]);
     const [episodes, setEpisodes] = useState<Episode[]>([]);
 
-
     const [currentSeason, setCurrentSeason] = useState<Season|undefined>(undefined);
     const [currentEpisode, setCurrentEpisode] = useState<Episode|undefined>(undefined);
 
+    // gets seasons array
     const seasonNames = seasons ? seasons.map(season => season.name) : [];
 
 
