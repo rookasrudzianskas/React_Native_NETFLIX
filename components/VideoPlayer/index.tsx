@@ -5,6 +5,7 @@ import {Episode} from "../../types";
 import {Video} from "expo-av";
 import styles from "./style";
 import {Playback} from "expo-av/build/AV";
+import {Storage} from 'aws-amplify';
 
 interface VideoPlayerProps {
     episode: Episode,
@@ -17,6 +18,7 @@ const VideoPlayer = (props: VideoPlayerProps) => {
 
     const video = useRef<Playback>(null);
     const [status, setStatus] = useState({});
+    const [videoURL, setVideoURL] = useState('');
 
     useEffect(() => {
         if(!video) {
@@ -33,6 +35,14 @@ const VideoPlayer = (props: VideoPlayerProps) => {
         })();
     }, [episode]);
 
+    useEffect(() => {
+        if(episode?.video?.startsWith('http')) {
+            setVideoURL(episode.video);
+        }
+        // @ts-ignore
+        Storage.get(episode.video).then(setVideoURL);
+    }, []);
+
 
     return (
         <View style={tw``}>
@@ -41,11 +51,12 @@ const VideoPlayer = (props: VideoPlayerProps) => {
                 ref={video}
                 style={styles.video}
                 source={{
-                    uri: episode.video,
+                    uri: videoURL,
                 }}
                 posterSource={{
                     uri: episode.poster,
                 }}
+    // @ts-ignore
                 usePoster={!status || status?.isPlaying}
                 posterStyle={{
                     resizeMode: 'cover'
