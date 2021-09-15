@@ -86,6 +86,7 @@ const MovieDetailsScreen = () => {
     return (
         <View style={styles.container}>
             {/*<Image style={styles.image} source={{ uri: firstEpisode.poster }} />*/}
+    {/*// @ts-ignore*/}
             {currentEpisode ? <VideoPlayer episode={currentEpisode} /> : <VideoPlayer episode={'http://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4'} />  }
 
             <FlatList
