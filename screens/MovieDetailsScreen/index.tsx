@@ -181,31 +181,26 @@ const MovieDetailsScreen = () => {
                                 {/*    <Text style={tw`text-white font-bold -mb-24`}>Season 1</Text>*/}
                                 {/*</View>*/}
 
-                                {currentSeason ? (
-                                <RNPickerSelect
-                                    onValueChange={(itemValue, itemPosition) => {
-                                        setCurrentSeason(seasons[itemPosition])
-                                    }}
-                                    placeholder={placeholder}
-                                    items={[
-                                        { label: 'Season 1', value: 'Season 1', color: 'black' },
-                                        { label: 'Season 2', value: 'Season 2', color: 'black'  },
-                                    ]}
-                                    />
+                                <View style={{ backgroundColor: 'white'}}>
 
-                                ) : (
-                                    <RNPickerSelect
-                                        onValueChange={(itemValue, itemPosition) => {
-                                            setCurrentSeason(seasons[itemPosition]);
+                                </View>
+
+
+                                {currentSeason && (
+                                    <Picker
+                                        selectedValue={currentSeason.name}
+                                        onValueChange={(itemValue, itemIndex) => {
+                                            setCurrentSeason(seasons[itemIndex])
                                         }}
-                                        placeholder={placeholder}
-                                        items={[
-                                            { label: 'Just one season', value: 'One season', color: 'black' },
-                                        ]}
-                                    />
+                                        style={{color: 'white', width: 130 }}
+                                        itemStyle={{backgroundColor: 'white'}}
+                                        dropdownIconColor={'white'}
+                                    >
+                                        {seasonNames.map(seasonName => (
+                                            <Picker.Item label={seasonName} value={seasonName} key={seasonName} />
+                                        ))}
+                                    </Picker>
                                 )}
-
-                                <Entypo style={tw`-mt-1 ml-3`} name="chevron-small-down" size={24} color="white" />
                             </View>
                         </View>
 
