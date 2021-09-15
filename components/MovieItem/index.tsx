@@ -17,12 +17,18 @@ const MovieItem = ({ movie } : {movie: Movie}) => {
 
     useEffect(() => {
         // storage
+        // console.log(movie.poster);
+        if(movie.poster.startsWith('http')) {
+            setImageUrl(movie.poster);
+            return;
+        }
+        // @ts-ignore
         Storage.get(movie.poster).then(setImageUrl);
     }, []);
 
     return (
         <View>
-            <TouchableOpacity activeOpacity={0.8} onPress={() => onMoviePress}>
+            <TouchableOpacity activeOpacity={0.8} onPress={onMoviePress}>
                 {/*// @ts-ignore*/}
                 <Image style={[tw`m-2`, styles.image]} source={{ uri: imageUrl || movie?.poster }} />
             </TouchableOpacity>
