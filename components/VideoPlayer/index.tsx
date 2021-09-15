@@ -46,7 +46,7 @@ const VideoPlayer = (props: VideoPlayerProps) => {
                 posterSource={{
                     uri: episode.poster,
                 }}
-                usePoster={!status.isPlaying}
+                usePoster={!status || status?.isPlaying}
                 posterStyle={{
                     resizeMode: 'cover'
                 }}
