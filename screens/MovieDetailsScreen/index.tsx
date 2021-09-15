@@ -182,7 +182,7 @@ const MovieDetailsScreen = () => {
                                 {/*</View>*/}
 
                                 </View>
-                                <View style={{ backgroundColor: 'black'}}>
+                                <View style={{ backgroundColor: 'black', marginTop: 10, display: 'flex', alignItems: 'center',}}>
 
                                 {currentSeason && (
                                     <Picker
@@ -190,7 +190,7 @@ const MovieDetailsScreen = () => {
                                         onValueChange={(itemValue, itemIndex) => {
                                             setCurrentSeason(seasons[itemIndex])
                                         }}
-                                        style={{color: 'white', width: 160, height: 50 }}
+                                        style={{color: 'white', width: 200 }}
                                         itemStyle={{backgroundColor: 'darkgray'}}
                                         dropdownIconColor={'black'}
                                     >
