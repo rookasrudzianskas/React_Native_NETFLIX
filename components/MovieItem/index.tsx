@@ -9,7 +9,7 @@ const MovieItem = ({ movie } : {movie: Movie}) => {
     const navigation = useNavigation();
 
     // @ts-ignore
-    const onMoviePress = (movie: Movie) => {
+    const onMoviePress = () => {
         navigation.navigate('MovieDetailsScreen', {id: movie.id});
     }
 
@@ -17,7 +17,7 @@ const MovieItem = ({ movie } : {movie: Movie}) => {
         <View>
             <TouchableOpacity activeOpacity={0.8} onPress={() => onMoviePress}>
                 {/*// @ts-ignore*/}
-                <Image style={[tw`m-2`, styles.image]} source={{ uri: movie.poster }} />
+                <Image style={[tw`m-2`, styles.image]} source={{ uri: movie?.poster }} />
             </TouchableOpacity>
         </View>
     );
