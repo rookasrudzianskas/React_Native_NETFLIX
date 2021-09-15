@@ -57,8 +57,6 @@ const MovieDetailsScreen = () => {
 
     }, []);
 
-    console.log(movie);
-
     useEffect(() => {
         if (!movie) {
             return;
