@@ -17,7 +17,7 @@ const MovieItem = ({ movie } : {movie: Movie}) => {
 
     useEffect(() => {
         // storage
-        Storage.get('asia-culturecenter-YgFUJ4Ef2EY-unsplash.jpg').then(setImageUrl);
+        Storage.get(movie.poster).then(setImageUrl);
     }, []);
 
     return (
