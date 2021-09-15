@@ -28,12 +28,8 @@ const firstSeason = movie.seasons.items[0];
 
 
 const MovieDetailsScreen = () => {
-    // console.log(firstEpisode)
-    // @ts-ignore
-    // const seasonNames = movie.seasons.items.map(season => season.name);
     const [movie, setMovie] = useState<Movie|undefined>(undefined);
     const [seasons, setSeasons] = useState<Season[]>([]);
-    console.log("This is the normal seasons")
     const [episodes, setEpisodes] = useState<Episode[]>([]);
 
 
