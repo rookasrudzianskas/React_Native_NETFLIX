@@ -191,7 +191,7 @@ const MovieDetailsScreen = () => {
                                 {currentSeason ? (
                                 <RNPickerSelect
                                     onValueChange={(itemValue, itemPosition) => {
-                                        // setCurrentSeason(movie?.seasons?.items[itemPosition])
+                                        setCurrentSeason(seasons[itemPosition])
                                     }}
                                     placeholder={placeholder}
                                     items={[
