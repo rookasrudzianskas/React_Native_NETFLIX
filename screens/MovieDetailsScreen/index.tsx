@@ -167,7 +167,7 @@ const MovieDetailsScreen = () => {
                                 </Text>
                             </View>
 
-                            <View style={[tw`mt-2 -mb-7 flex flex-row items-center`]}>
+                            {/*<View style={[tw`mt-2 -mb-7 flex flex-row items-center`]}>*/}
                                 {/*<Picker*/}
                                 {/*    style={{color: 'white', height: 50, marginTop: -50, marginBottom: 40, padding: -10, width: 150}}*/}
                                 {/*    selectedValue={'a'}*/}
@@ -181,10 +181,8 @@ const MovieDetailsScreen = () => {
                                 {/*    <Text style={tw`text-white font-bold -mb-24`}>Season 1</Text>*/}
                                 {/*</View>*/}
 
-                                <View style={{ backgroundColor: 'white'}}>
-
                                 </View>
-
+                                <View style={{ backgroundColor: 'black'}}>
 
                                 {currentSeason && (
                                     <Picker
@@ -192,9 +190,9 @@ const MovieDetailsScreen = () => {
                                         onValueChange={(itemValue, itemIndex) => {
                                             setCurrentSeason(seasons[itemIndex])
                                         }}
-                                        style={{color: 'white', width: 130 }}
-                                        itemStyle={{backgroundColor: 'white'}}
-                                        dropdownIconColor={'white'}
+                                        style={{color: 'white', width: 160, height: 50 }}
+                                        itemStyle={{backgroundColor: 'darkgray'}}
+                                        dropdownIconColor={'black'}
                                     >
                                         {seasonNames.map(seasonName => (
                                             <Picker.Item label={seasonName} value={seasonName} key={seasonName} />
@@ -202,7 +200,8 @@ const MovieDetailsScreen = () => {
                                     </Picker>
                                 )}
                             </View>
-                        </View>
+
+                        {/*</View>*/}
 
                     </View>
                 )}
