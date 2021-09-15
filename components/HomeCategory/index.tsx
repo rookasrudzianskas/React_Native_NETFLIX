@@ -33,8 +33,9 @@ const HomeCategory = (props: HomeCategoryProps) => {
         navigation.navigate('MovieDetailsScreen', {id: movie.id});
     }
 
-    Storage.list('')
-        .then(result => console.log(result))
+    // storage
+    Storage.list('asia-culturecenter-YgFUJ4Ef2EY-unsplash.jpg')
+        .then(result => console.log(result));
 
     return (
             <View>
