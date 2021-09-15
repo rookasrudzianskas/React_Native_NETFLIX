@@ -5,6 +5,7 @@ import styles from "../../screens/HomeScreen/styles";
 import {useNavigation} from "@react-navigation/native";
 import {Category, Movie} from "../../src/models";
 import { DataStore } from 'aws-amplify';
+import {Storage} from 'aws-amplify';
 
 interface HomeCategoryProps {
     category: Category
@@ -31,6 +32,10 @@ const HomeCategory = (props: HomeCategoryProps) => {
     const onMoviePress = (movie: Movie) => {
         navigation.navigate('MovieDetailsScreen', {id: movie.id});
     }
+
+    Storage.list('public/')
+        .then(result => console.log(result))
+        .catch(err => console.log(err));
 
     return (
             <View>
