@@ -81,13 +81,16 @@ const MovieDetailsScreen = () => {
 
             setEpisodes(seasonEpisodes);
         }
+
+        fetchEpisodes();
+
     }, [currentSeason]);
 
     if(!movie) {
         return <ActivityIndicator />
     }
 
-    console.log("This is seasons >>>>", seasons);
+    // console.log("This is seasons >>>>", seasons);
 
 
     return (
