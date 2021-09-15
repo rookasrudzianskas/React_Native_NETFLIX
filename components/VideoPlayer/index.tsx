@@ -41,7 +41,7 @@ const VideoPlayer = (props: VideoPlayerProps) => {
         }
         // @ts-ignore
         Storage.get(episode.video).then(setVideoURL);
-    }, []);
+    }, [episode]);
 
     // console.log(videoURL);
 
