@@ -28,12 +28,12 @@ const VideoPlayer = (props: VideoPlayerProps) => {
         (async () => {
             await video?.current?.unloadAsync();
             await video?.current?.loadAsync(
-                { uri: episode.video },
+                { uri: videoURL },
                 {},
                 false
                 );
         })();
-    }, [episode]);
+    }, [videoURL]);
 
     useEffect(() => {
         if(episode?.video?.startsWith('http')) {
