@@ -60,18 +60,16 @@ const MovieDetailsScreen = () => {
     console.log(movie);
 
     useEffect(() => {
-        if(!movie) {
+        if (!movie) {
             return;
         }
         const fetchSeasons = async () => {
-            const movieSeasons = (await DataStore.query(Seasons)).filter(s => s.movie?.id === movie.id)
-            // @ts-ignore
-            console.log("this is that movie seasons 🔥", movieSeasons);
+            const movieSeasons = (await DataStore.query(Season)).filter(s => s.movie?.id == movie.id);
             setSeasons(movieSeasons);
             setCurrentSeason(movieSeasons[0]);
-        }
+        }s
         fetchSeasons();
-    }, [movie]);
+    }, [movie])
 
     if(!movie) {
         return <ActivityIndicator />
@@ -80,7 +78,7 @@ const MovieDetailsScreen = () => {
 
 
 
-    // console.log("This is seasons >>>>", seasons);
+    console.log("This is seasons >>>>", seasons);
 
 
     return (
