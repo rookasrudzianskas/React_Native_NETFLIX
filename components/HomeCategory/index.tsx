@@ -28,12 +28,6 @@ const HomeCategory = (props: HomeCategoryProps) => {
     }, []);
 
 
-
-
-    // storage
-    Storage.list('asia-culturecenter-YgFUJ4Ef2EY-unsplash.jpg')
-        .then(result => console.log(result));
-
     return (
             <View>
                 <Text style={tw`text-white text-xl font-bold mt-1 mb-1`}>{category.title}</Text>
