@@ -6,6 +6,7 @@ import {useNavigation} from "@react-navigation/native";
 import {Category, Movie} from "../../src/models";
 import { DataStore } from 'aws-amplify';
 import {Storage} from 'aws-amplify';
+import MovieItem from "../MovieItem";
 
 interface HomeCategoryProps {
     category: Category
@@ -26,12 +27,8 @@ const HomeCategory = (props: HomeCategoryProps) => {
         fetchMovies();
     }, []);
 
-    const navigation = useNavigation();
 
-    // @ts-ignore
-    const onMoviePress = (movie: Movie) => {
-        navigation.navigate('MovieDetailsScreen', {id: movie.id});
-    }
+
 
     // storage
     Storage.list('asia-culturecenter-YgFUJ4Ef2EY-unsplash.jpg')
@@ -43,10 +40,7 @@ const HomeCategory = (props: HomeCategoryProps) => {
                 {/*// @ts-ignore*/}
                 <FlatList horizontal={true} showsVerticalScrollIndicator={false}  showsHorizontalScrollIndicator={false} data={movies} renderItem={({item}) => (
                     <View>
-                        <TouchableOpacity activeOpacity={0.8} onPress={() => onMoviePress(item)}>
-                        {/*// @ts-ignore*/}
-                            <Image style={[tw`m-2`, styles.image]} source={{ uri: item.poster }} />
-                        </TouchableOpacity>
+                       <MovieItem movie={item} />
                     </View>
                 )}/>
             </View>
