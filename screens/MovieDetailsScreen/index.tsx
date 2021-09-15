@@ -86,6 +86,9 @@ const MovieDetailsScreen = () => {
 
     }, [currentSeason]);
 
+    // ----------------------------------------- end of functions -----------------------------------------------------------------
+
+
     if(!movie) {
         return <ActivityIndicator />
     }
