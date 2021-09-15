@@ -90,9 +90,6 @@ const MovieDetailsScreen = () => {
         return <ActivityIndicator />
     }
 
-    // console.log("This is seasons >>>>", seasons);
-
-
     return (
         <View style={styles.container}>
             {/*<Image style={styles.image} source={{ uri: firstEpisode.poster }} />*/}
