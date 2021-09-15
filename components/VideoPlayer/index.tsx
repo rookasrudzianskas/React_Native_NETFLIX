@@ -21,19 +21,19 @@ const VideoPlayer = (props: VideoPlayerProps) => {
     const [videoURL, setVideoURL] = useState('');
 
     useEffect(() => {
-        if(!video) {
+        if (!video) {
             return;
         }
-
         (async () => {
             await video?.current?.unloadAsync();
             await video?.current?.loadAsync(
                 { uri: videoURL },
                 {},
                 false
-                );
+            );
         })();
-    }, [videoURL]);
+    }, [videoURL])
+
 
     useEffect(() => {
         if(episode?.video?.startsWith('http')) {
