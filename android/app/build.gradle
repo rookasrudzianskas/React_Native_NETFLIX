@@ -184,28 +184,28 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: "libs", include: ["*.jar"])
+    compile fileTree(dir: "libs", include: ["*.jar"])
     //noinspection GradleDynamicVersion
-    implementation "com.facebook.react:react-native:+"  // From node_modules
-    implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.0.0"
-    debugImplementation("com.facebook.flipper:flipper:${FLIPPER_VERSION}") {
+    compile "com.facebook.react:react-native:+"  // From node_modules
+    compile "androidx.swiperefreshlayout:swiperefreshlayout:1.0.0"
+    debugcompile("com.facebook.flipper:flipper:${FLIPPER_VERSION}") {
       exclude group:'com.facebook.fbjni'
     }
-    debugImplementation("com.facebook.flipper:flipper-network-plugin:${FLIPPER_VERSION}") {
+    debugcompile("com.facebook.flipper:flipper-network-plugin:${FLIPPER_VERSION}") {
         exclude group:'com.facebook.flipper'
         exclude group:'com.squareup.okhttp3', module:'okhttp'
     }
-    debugImplementation("com.facebook.flipper:flipper-fresco-plugin:${FLIPPER_VERSION}") {
+    debugcompile("com.facebook.flipper:flipper-fresco-plugin:${FLIPPER_VERSION}") {
         exclude group:'com.facebook.flipper'
     }
     addUnimodulesDependencies()
 
     if (enableHermes) {
         def hermesPath = "../../node_modules/hermes-engine/android/";
-        debugImplementation files(hermesPath + "hermes-debug.aar")
-        releaseImplementation files(hermesPath + "hermes-release.aar")
+        debugcompile files(hermesPath + "hermes-debug.aar")
+        releasecompile files(hermesPath + "hermes-release.aar")
     } else {
-        implementation jscFlavor
+        compile jscFlavor
     }
 }
 
@@ -217,3 +217,5 @@ task copyDownloadableDepsToLibs(type: Copy) {
 }
 
 apply from: file("../../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesAppBuildGradle(project)
+
+compile "com.android.support:appcompat-v7:28.0.0"
