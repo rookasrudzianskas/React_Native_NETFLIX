@@ -149,7 +149,6 @@ const MovieDetailsScreen = () => {
                                 </View>
                             </TouchableOpacity>
 
-
                             <View style={tw``}>
                                 <Text style={tw`text-gray-100 mt-1`}>{movie.plot || 'Something'}</Text>
                                 <Text style={tw`text-gray-500 mt-3`}>Cast: {movie?.cast}</Text>
