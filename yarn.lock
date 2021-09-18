@@ -9432,6 +9432,11 @@ react-native-picker-select@^8.0.4:
     "@react-native-picker/picker" "^1.8.3"
     lodash.isequal "^4.5.0"
 
+react-native-purchases@^4.3.1:
+  version "4.3.1"
+  resolved "https://registry.yarnpkg.com/react-native-purchases/-/react-native-purchases-4.3.1.tgz#d8372e8715665729b98f58042fad6296ecd2ac07"
+  integrity sha512-h55jPvb9ye5+h+welEb06q18M3tyDsAJ6WC/wt1KJ7VN2OvN7zFQg92AKW0rWMPBCP2AWj6yjbWNfGIJc018fA==
+
 react-native-reanimated@~2.2.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/react-native-reanimated/-/react-native-reanimated-2.2.0.tgz#a6412c56b4e591d1f00fac949f62d0c72c357c78"
