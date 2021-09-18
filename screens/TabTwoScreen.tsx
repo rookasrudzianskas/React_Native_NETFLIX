@@ -25,9 +25,11 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    backgroundColor: 'black',
   },
   title: {
     fontSize: 20,
     fontWeight: 'bold',
+    color: 'white',
   },
 });
