@@ -27,7 +27,7 @@ const HomeScreen = () => {
     }, []);
 
     return (
-        <SafeAreaView>
+        <SafeAreaView style={{backgroundColor: 'black'}}>
             <View style={[styles.container, tw``]}>
                 <FlatList showsVerticalScrollIndicator={false}  showsHorizontalScrollIndicator={false}  data={categories}  renderItem={({item}) => (
                     // @ts-ignore

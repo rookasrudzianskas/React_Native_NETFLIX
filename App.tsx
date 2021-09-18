@@ -9,7 +9,7 @@ import useColorScheme from './hooks/useColorScheme';
 import Navigation from './navigation';
 // @ts-ignore
 import { withAuthenticator } from 'aws-amplify-react-native';
-import {SafeAreaView} from "react-native";
+import {SafeAreaView, View} from "react-native";
 
 import Amplify from 'aws-amplify'
 import config from './src/aws-exports'
@@ -31,9 +31,11 @@ function App (){
   } else {
 
     return (
-      <SafeAreaProvider>
+      <SafeAreaProvider style={{ backgroundColor: 'black'}}>
+        {/*<View style={tw`bg-gray-100`}>*/}
           <Navigation colorScheme={colorScheme} />
           <StatusBar />
+        {/*</View>*/}
       </SafeAreaProvider>
     )
   }
