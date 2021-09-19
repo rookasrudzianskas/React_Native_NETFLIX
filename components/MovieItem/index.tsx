@@ -27,7 +27,8 @@ const MovieItem = ({ movie } : {movie: Movie}) => {
             } else {
                 // redirect to the paywall
                 // otherwise redirect to the paywall.
-                console.warn("PLease buy the subscription");
+                // console.warn("PLease buy the subscription");
+                navigation.navigate('Paywall');
             }
         } catch (e) {
             console.log(e);
