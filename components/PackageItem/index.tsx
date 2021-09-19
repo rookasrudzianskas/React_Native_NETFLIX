@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import { View, Text, Pressable, Alert } from 'react-native';
+import {View, Text, Pressable, Alert, TouchableOpacity} from 'react-native';
 import styles from './styles.js';
 import {useNavigation} from "@react-navigation/native";
 import Purchases, {PurchasesPackage} from 'react-native-purchases';
@@ -25,13 +25,13 @@ const PackageItem = ({ purchasePackage } : PackageItemProps) => {
   };
 
   return (
-    <Pressable onPress={onSelection} style={styles.container}>
+    <TouchableOpacity activeOpacity={0.8} onPress={onSelection} style={styles.container}>
       <View style={styles.left}>
         <Text style={styles.title}>Pro Membership</Text>
         <Text style={styles.terms}>Feel free to watch the movies you like!</Text>
       </View>
       <Text style={styles.title}>$22</Text>
-    </Pressable>
+    </TouchableOpacity>
   );
 };
 

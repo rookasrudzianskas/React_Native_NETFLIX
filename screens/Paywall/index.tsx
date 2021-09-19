@@ -3,6 +3,7 @@ import {FlatList, Text, View} from 'react-native';
 import styles from './style';
 import Purchases, {PurchasesPackage} from "react-native-purchases";
 import PackageItem from "../../components/PackageItem";
+import tw from "tailwind-react-native-classnames";
 
 
 const Paywall = () => {
@@ -27,15 +28,18 @@ const Paywall = () => {
     }, []);
 
     return (
-        <View style={{ backgroundColor: 'black'}}>
-           <FlatList data={packages} renderItem={({item}) => <Text>{item?.product?.title || 'Pro Subscription'}</Text>} />
-            {/*<Text>Pro Netflix Subscription</Text>*/}
-            {/*<Text>Pro Annual Netflix Subscription</Text>*/}
-    {/*// @ts-ignore*/}
-            <PackageItem purchasePackage={"Rokas"}/>
-    {/*// @ts-ignore*/}
-            <PackageItem purchasePackage={"Rokas"}/>
-        </View>
+            <View style={{ backgroundColor: 'black', display: 'flex', flexGrow: 1}}>
+
+               {/*<FlatList data={packages} renderItem={({item}) => <Text>{item?.product?.title || 'Pro Subscription'}</Text>} />*/}
+                {/*<Text>Pro Netflix Subscription</Text>*/}
+                {/*<Text>Pro Annual Netflix Subscription</Text>*/}
+                <View style={tw`flex justify-center mt-5`}>
+            {/*// @ts-ignore*/}
+                    <PackageItem purchasePackage={"Rokas"}/>
+            {/*// @ts-ignore*/}
+                    <PackageItem purchasePackage={"Rokas"}/>
+                </View>
+            </View>
     );
 };
 

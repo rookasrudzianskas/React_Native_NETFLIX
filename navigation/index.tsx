@@ -30,7 +30,10 @@ const Stack = createStackNavigator<RootStackParamList>();
 
 function RootNavigator() {
   return (
-    <Stack.Navigator screenOptions={{ headerShown: false }}>
+    <Stack.Navigator screenOptions={{ headerShown: false, headerStyle: {
+            backgroundColor: 'black', },   headerTintColor: '#fff', headerTitleStyle: {
+            fontWeight: 'bold',
+        },}}>
       <Stack.Screen name="Root" component={BottomTabNavigator} />
       <Stack.Screen name="Paywall" component={Paywall} options={{ headerShown: true}} />
       <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'Oops!' }} />
