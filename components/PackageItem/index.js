@@ -1,12 +1,17 @@
 import React from 'react';
 import { View, Text, Pressable, Alert } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
 import styles from './styles.js';
+import {useNavigation} from "@react-navigation/native";
+import Purchases, {PurchasesPackage} from "react-native-purchases";
 
+
+// @ts-ignore
 interface PackageItemProps {
-
+// @ts-ignore
+    purchasePackage: PurchasesPackage
 }
 
+// @ts-ignore
 const PackageItem = ({ purchasePackage } : PackageItemProps) => {
   const {
     product: { title, description, price_string },
