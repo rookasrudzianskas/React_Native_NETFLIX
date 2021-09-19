@@ -5,15 +5,29 @@ import styles from "./style";
 import {Movie} from "../../src/models";
 import {useNavigation} from "@react-navigation/native";
 import {Storage} from "aws-amplify";
+import Purchases from "react-native-purchases";
 
 const MovieItem = ({ movie } : {movie: Movie}) => {
     const navigation = useNavigation();
     const [imageUrl, setImageUrl] = useState('');
 
     // @ts-ignore
-    const onMoviePress = () => {
+    const onMoviePress = async () => {
         // check if user is pro
 
+        try {
+            const purchaserInfo = await Purchases.getPurchaserInfo();
+            if (typeof purchaserInfo
+                .entitlements
+                .active
+                .my_entitlement_identifier !== "undefined") {
+                // Grant user "pro" access
+
+
+            }
+        } catch (e) {
+            console.log(e);
+        }
         // redirect to the details screen
         navigation.navigate('MovieDetailsScreen', {id: movie.id});
 
