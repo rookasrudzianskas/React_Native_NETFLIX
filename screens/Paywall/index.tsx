@@ -13,7 +13,7 @@ const Paywall = () => {
             try {
                 const offerings = await Purchases.getOfferings();
                 // console.warn("ROOKAS")
-                //     console.warn("THis is offerings", offerings);
+                // console.warn("THis is offerings", offerings);
                 if (offerings.current !== null) {
                     setPackages(offerings.current.availablePackages);
                 // Display current offering with offerings.current
