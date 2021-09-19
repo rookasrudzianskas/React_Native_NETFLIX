@@ -1,6 +1,6 @@
 import 'react-native-gesture-handler';
 import { StatusBar } from 'expo-status-bar';
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import tw from 'tailwind-react-native-classnames';
 
@@ -14,6 +14,7 @@ import Purchases from 'react-native-purchases';
 
 import Amplify from 'aws-amplify'
 import config from './src/aws-exports'
+import {API_KEY} from "./src/config";
 
 
   Amplify.configure({
@@ -28,6 +29,11 @@ function App (){
   const [purchasesSetup, setPurchasesSetup] = useState(false);
   const isLoadingComplete = useCachedResources();
   const colorScheme = useColorScheme();
+
+  useEffect(() => {
+    Purchases.setDebugLogsEnabled(true);
+    Purchases.setup(API_KEY).then(() => setPurchasesSetup(true));
+  }, []);
 
   if (!isLoadingComplete || !purchasesSetup) {
     return null;
