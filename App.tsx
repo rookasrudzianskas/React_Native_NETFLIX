@@ -32,7 +32,8 @@ function App (){
 
   useEffect(() => {
     Purchases.setDebugLogsEnabled(true);
-    Purchases.setup(API_KEY).then(() => setPurchasesSetup(true));
+    Purchases.setup('dnFiMUfxlpJTFbBnCbCuJGabmkehgExZ');
+    setPurchasesSetup(true);
   }, []);
 
   if (!isLoadingComplete || !purchasesSetup) {
