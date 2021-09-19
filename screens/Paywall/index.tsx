@@ -31,7 +31,9 @@ const Paywall = () => {
            <FlatList data={packages} renderItem={({item}) => <Text>{item?.product?.title || 'Pro Subscription'}</Text>} />
             {/*<Text>Pro Netflix Subscription</Text>*/}
             {/*<Text>Pro Annual Netflix Subscription</Text>*/}
+    {/*// @ts-ignore*/}
             <PackageItem purchasePackage={"Rokas"}/>
+    {/*// @ts-ignore*/}
             <PackageItem purchasePackage={"Rokas"}/>
         </View>
     );
