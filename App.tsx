@@ -32,7 +32,7 @@ function App (){
 
   useEffect(() => {
     Purchases.setDebugLogsEnabled(true);
-    Purchases.setup('dnFiMUfxlpJTFbBnCbCuJGabmkehgExZ');
+    Purchases.setup(API_KEY);
     setPurchasesSetup(true);
   }, []);
 
