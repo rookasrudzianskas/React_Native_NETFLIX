@@ -228,5 +228,3 @@ const MovieDetailsScreen = () => {
 };
 
 export default MovieDetailsScreen;
-
-// todays
