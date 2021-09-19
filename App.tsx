@@ -1,6 +1,6 @@
 import 'react-native-gesture-handler';
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
+import React, {useState} from 'react';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import tw from 'tailwind-react-native-classnames';
 
@@ -25,9 +25,11 @@ import config from './src/aws-exports'
 
 
 function App (){
+  const [purchasesSetup, setPurchasesSetup] = useState(false);
   const isLoadingComplete = useCachedResources();
   const colorScheme = useColorScheme();
-  if (!isLoadingComplete) {
+
+  if (!isLoadingComplete || !purchasesSetup) {
     return null;
   } else {
 
