@@ -10,7 +10,8 @@ const Paywall = () => {
         const fetchOfferings = async () => {
             try {
                 const offerings = await Purchases.getOfferings();
-                    console.log("THis is offerings", offerings.current);
+                // console.warn("ROOKAS")
+                    console.warn("THis is offerings", offerings);
                 if (offerings.current !== null) {
                 // Display current offering with offerings.current
                 }
