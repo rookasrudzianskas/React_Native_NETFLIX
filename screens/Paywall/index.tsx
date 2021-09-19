@@ -10,11 +10,12 @@ const Paywall = () => {
         const fetchOfferings = async () => {
             try {
                 const offerings = await Purchases.getOfferings();
+                    console.log("THis is offerings", offerings.current);
                 if (offerings.current !== null) {
                 // Display current offering with offerings.current
-                    console.log("THis is offerings", offerings.current);
                 }
             } catch (e) {
+                console.log(e);
             }
         }
 
