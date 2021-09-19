@@ -3,7 +3,11 @@ import { View, Text, Pressable, Alert } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import styles from './styles.js';
 
-const PackageItem = ({ purchasePackage, setIsPurchasing }) => {
+interface PackageItemProps {
+
+}
+
+const PackageItem = ({ purchasePackage } : PackageItemProps) => {
   const {
     product: { title, description, price_string },
   } = purchasePackage;
