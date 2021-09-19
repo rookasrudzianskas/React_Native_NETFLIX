@@ -32,10 +32,8 @@ function App (){
 
     return (
       <SafeAreaProvider style={{ backgroundColor: 'black'}}>
-        {/*<View style={tw`bg-gray-100`}>*/}
           <Navigation colorScheme={colorScheme} />
           <StatusBar />
-        {/*</View>*/}
       </SafeAreaProvider>
     )
   }
