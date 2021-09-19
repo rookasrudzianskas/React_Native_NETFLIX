@@ -12,7 +12,7 @@ const Paywall = () => {
         const fetchOfferings = async () => {
             try {
                 const offerings = await Purchases.getOfferings();
-                // console.warn("ROOKAS")
+                // console.warn("ROOKAS");
                 // console.warn("THis is offerings", offerings);
                 if (offerings.current !== null) {
                     setPackages(offerings.current.availablePackages);
