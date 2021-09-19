@@ -6,6 +6,7 @@ import {Movie} from "../../src/models";
 import {useNavigation} from "@react-navigation/native";
 import {Storage} from "aws-amplify";
 import Purchases from "react-native-purchases";
+import { ENTITELMENT_ID } from "../../src/config";
 
 const MovieItem = ({ movie } : {movie: Movie}) => {
     const navigation = useNavigation();
@@ -19,8 +20,7 @@ const MovieItem = ({ movie } : {movie: Movie}) => {
             const purchaserInfo = await Purchases.getPurchaserInfo();
             if (typeof purchaserInfo
                 .entitlements
-                .active
-                .my_entitlement_identifier !== "undefined") {
+                .active[ENTITELMENT_ID] !== "undefined") {
                 // Grant user "pro" access
                 // redirect to the details screen
 
