@@ -26,13 +26,13 @@ const MovieItem = ({ movie } : {movie: Movie}) => {
                 navigation.navigate('MovieDetailsScreen', {id: movie.id});
             } else {
                 // redirect to the paywall
+                // otherwise redirect to the paywall.
                 console.warn("PLease buy the subscription");
             }
         } catch (e) {
             console.log(e);
         }
 
-        // otherwise redirect to the paywall.
     }
 
     useEffect(() => {
