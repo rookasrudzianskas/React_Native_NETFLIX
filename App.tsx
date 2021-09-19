@@ -34,7 +34,7 @@ function App (){
     Purchases.setDebugLogsEnabled(true);
     Purchases.setup(API_KEY);
     setPurchasesSetup(true);
-    console.log("This is working :f🔥")
+    // console.log("This is working :f🔥")
   }, []);
 
   if (!isLoadingComplete || !purchasesSetup) {
