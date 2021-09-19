@@ -11,8 +11,9 @@ const Paywall = () => {
             try {
                 const offerings = await Purchases.getOfferings();
                 if (offerings.current !== null) {
-                }
                 // Display current offering with offerings.current
+                    console.log("THis is offerings", offerings.current);
+                }
             } catch (e) {
             }
         }
