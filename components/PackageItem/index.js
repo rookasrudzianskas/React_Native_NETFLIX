@@ -27,10 +27,10 @@ const PackageItem = ({ purchasePackage } : PackageItemProps) => {
   return (
     <Pressable onPress={onSelection} style={styles.container}>
       <View style={styles.left}>
-        <Text style={styles.title}>{title}</Text>
-        <Text style={styles.terms}>{description}</Text>
+        <Text style={styles.title}>{title || "Pro Membership"}</Text>
+        <Text style={styles.terms}>{description || "Feel free to watch the movies you like!"}</Text>
       </View>
-      <Text style={styles.title}>{price_string}</Text>
+      <Text style={styles.title}>{price_string || "$22"}</Text>
     </Pressable>
   );
 };
