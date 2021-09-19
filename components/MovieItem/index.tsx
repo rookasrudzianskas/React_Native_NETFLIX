@@ -22,13 +22,13 @@ const MovieItem = ({ movie } : {movie: Movie}) => {
                 .active
                 .my_entitlement_identifier !== "undefined") {
                 // Grant user "pro" access
+                // redirect to the details screen
 
 
             }
         } catch (e) {
             console.log(e);
         }
-        // redirect to the details screen
         navigation.navigate('MovieDetailsScreen', {id: movie.id});
 
         // otherwise redirect to the paywall.
