@@ -12,6 +12,7 @@ interface PackageItemProps {
 }
 
 // @ts-ignore
+// @ts-ignore
 const PackageItem = ({ purchasePackage } : PackageItemProps) => {
   const {
     product: { title, description, price_string },
