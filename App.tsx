@@ -32,7 +32,7 @@ function App (){
 
   useEffect(() => {
     Purchases.setDebugLogsEnabled(true);
-    Purchases.setup(API_KEY);
+    Purchases.setup(API_KEY).then(() => setPurchasesSetup(true));
   }, []);
 
   if (!isLoadingComplete || !purchasesSetup) {

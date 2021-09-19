@@ -12,7 +12,12 @@ const MovieItem = ({ movie } : {movie: Movie}) => {
 
     // @ts-ignore
     const onMoviePress = () => {
+        // check if user is pro
+
+        // redirect to the details screen
         navigation.navigate('MovieDetailsScreen', {id: movie.id});
+
+        // otherwise redirect to the paywall.
     }
 
     useEffect(() => {
