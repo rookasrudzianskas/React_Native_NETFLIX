@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {Text, View} from 'react-native';
+import {FlatList, Text, View} from 'react-native';
 import styles from './style';
 import Purchases, {PurchasesPackage} from "react-native-purchases";
 
@@ -26,7 +26,9 @@ const Paywall = () => {
 
     return (
         <View>
-           <Text>Paywall</Text>
+           <FlatList data={packages} renderItem={({item}) => <Text>{item?.product?.title || 'Pro Subscription'}</Text>} />
+            <Text>Pro Netflix Subscription</Text>
+            <Text>Pro Annual Netflix Subscription</Text>
         </View>
     );
 };
