@@ -4,6 +4,7 @@ import styles from './style';
 import Purchases, {PurchasesPackage} from "react-native-purchases";
 import PackageItem from "../../components/PackageItem";
 
+
 const Paywall = () => {
     const [packages, setPackages] = useState<PurchasesPackage[]>([]);
 
@@ -30,8 +31,8 @@ const Paywall = () => {
            <FlatList data={packages} renderItem={({item}) => <Text>{item?.product?.title || 'Pro Subscription'}</Text>} />
             {/*<Text>Pro Netflix Subscription</Text>*/}
             {/*<Text>Pro Annual Netflix Subscription</Text>*/}
-            <PackageItem purchasePackag={"Rokas"}/>
-            <PackageItem purchasePackag={"Rokas"}/>
+            <PackageItem purchasePackage={"Rokas"}/>
+            <PackageItem purchasePackage={"Rokas"}/>
         </View>
     );
 };

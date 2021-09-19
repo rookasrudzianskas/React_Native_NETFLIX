@@ -18,6 +18,9 @@ const styles = StyleSheet.create({
   terms: {
     color: 'darkgrey',
   },
+  left: {
+
+  }
 });
 
 export default styles;
