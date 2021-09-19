@@ -23,13 +23,14 @@ const MovieItem = ({ movie } : {movie: Movie}) => {
                 .active[ENTITELMENT_ID] !== "undefined") {
                 // Grant user "pro" access
                 // redirect to the details screen
-
-
+                navigation.navigate('MovieDetailsScreen', {id: movie.id});
+            } else {
+                // redirect to the paywall
+                console.warn("PLease buy the subscription");
             }
         } catch (e) {
             console.log(e);
         }
-        navigation.navigate('MovieDetailsScreen', {id: movie.id});
 
         // otherwise redirect to the paywall.
     }
