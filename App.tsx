@@ -10,7 +10,7 @@ import Navigation from './navigation';
 // @ts-ignore
 import { withAuthenticator } from 'aws-amplify-react-native';
 import {SafeAreaView, View} from "react-native";
-import Purchases from 'react-native-purchases';
+import Purchases from "react-native-purchases";
 
 import Amplify from 'aws-amplify'
 import config from './src/aws-exports'
@@ -32,7 +32,7 @@ function App (){
 
   useEffect(() => {
     Purchases.setDebugLogsEnabled(true);
-    Purchases.setup(API_KEY).then(() => setPurchasesSetup(true));
+    Purchases.setup(API_KEY);
   }, []);
 
   if (!isLoadingComplete || !purchasesSetup) {
