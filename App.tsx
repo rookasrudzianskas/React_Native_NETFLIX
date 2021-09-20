@@ -38,7 +38,7 @@ function App (){
         return;
       }
 
-      const userID = userInfo.attributes.id
+      const userID = userInfo.attributes.sub;
 
       Purchases.setDebugLogsEnabled(true);
       await Purchases.setup(API_KEY);
