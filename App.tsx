@@ -32,8 +32,11 @@ function App (){
 
   useEffect(() => {
     const setupRC = async() => {
+      // get the user id
+      const userInfo =
+
       Purchases.setDebugLogsEnabled(true);
-      Purchases.setup(API_KEY);
+      await Purchases.setup(API_KEY);
       setPurchasesSetup(true);
       // console.log("This is working :f🔥")
 
