@@ -41,7 +41,7 @@ function App (){
       const userID = userInfo.attributes.sub;
 
       Purchases.setDebugLogsEnabled(true);
-      await Purchases.setup(API_KEY);
+      await Purchases.setup(API_KEY, userID);
       setPurchasesSetup(true);
       // console.log("This is working :f🔥")
 
