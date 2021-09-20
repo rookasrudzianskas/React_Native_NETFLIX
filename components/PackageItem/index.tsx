@@ -23,6 +23,7 @@ const PackageItem = ({ purchasePackage } : PackageItemProps) => {
   const onSelection = async () => {
       // TODO purchase package
       try {
+          // @ts-ignore
           const purchaseMade = await Purchases.purchasePackage(package);
           // @ts-ignore
           if (typeof purchaseMade
@@ -32,7 +33,7 @@ const PackageItem = ({ purchasePackage } : PackageItemProps) => {
               .active[ENTITELMENT_ID] !== "undefined") {
                 // Unlock that great "pro" content
 
-
+            navigation.goBack();
 
           }
       } catch (e) {
