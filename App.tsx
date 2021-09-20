@@ -31,10 +31,17 @@ function App (){
   const colorScheme = useColorScheme();
 
   useEffect(() => {
-    Purchases.setDebugLogsEnabled(true);
-    Purchases.setup(API_KEY);
-    setPurchasesSetup(true);
-    // console.log("This is working :f🔥")
+    const setupRC = async() => {
+      Purchases.setDebugLogsEnabled(true);
+      Purchases.setup(API_KEY);
+      setPurchasesSetup(true);
+      // console.log("This is working :f🔥")
+
+    };
+
+    setupRC();
+
+
   }, []);
 
   if (!isLoadingComplete || !purchasesSetup) {
