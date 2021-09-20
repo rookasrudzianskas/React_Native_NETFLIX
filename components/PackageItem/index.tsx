@@ -3,6 +3,7 @@ import {View, Text, Pressable, Alert, TouchableOpacity} from 'react-native';
 import styles from './styles.js';
 import {useNavigation} from "@react-navigation/native";
 import Purchases, {PurchasesPackage} from 'react-native-purchases';
+import {ENTITELMENT_ID} from "../../src/config";
 
 
 // @ts-ignore
@@ -23,12 +24,14 @@ const PackageItem = ({ purchasePackage } : PackageItemProps) => {
       // TODO purchase package
       try {
           const purchaseMade = await Purchases.purchasePackage(package);
+          // @ts-ignore
           if (typeof purchaseMade
               .purchaserInfo
               .entitlements
               .active
-              .my_entitlement_identifier !== "undefined") {
+              .active[ENTITELMENT_ID] !== "undefined") {
                 // Unlock that great "pro" content
+
 
 
           }
