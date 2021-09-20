@@ -12,7 +12,7 @@ import { withAuthenticator } from 'aws-amplify-react-native';
 import {SafeAreaView, View} from "react-native";
 import Purchases from "react-native-purchases";
 
-import Amplify from 'aws-amplify'
+import Amplify, { Auth } from 'aws-amplify'
 import config from './src/aws-exports'
 import {API_KEY} from "./src/config";
 
@@ -33,7 +33,12 @@ function App (){
   useEffect(() => {
     const setupRC = async() => {
       // get the user id
-      const userInfo =
+      const userInfo = await Auth.currentAuthenticatedUser();
+      if(!userInfo) {
+        return;
+      }
+
+      const userID = userInfo.attributes.id
 
       Purchases.setDebugLogsEnabled(true);
       await Purchases.setup(API_KEY);
