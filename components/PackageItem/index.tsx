@@ -20,9 +20,25 @@ const PackageItem = ({ purchasePackage } : PackageItemProps) => {
   const navigation = useNavigation();
 
   const onSelection = async () => {
-    // TODO purchase package
-      console.log("SOMETHING");
-  };
+      // TODO purchase package
+      try {
+          const purchaseMade = await Purchases.purchasePackage(package);
+          if (typeof purchaseMade
+              .purchaserInfo
+              .entitlements
+              .active
+              .my_entitlement_identifier !== "undefined") {
+                // Unlock that great "pro" content
+
+
+          }
+      } catch (e) {
+          if (!e.userCancelled) {
+            console.log("SOMETHING");
+          }
+          console.log(e);
+      }
+  }
 
   return (
     <TouchableOpacity activeOpacity={0.8} onPress={onSelection} style={styles.container}>
